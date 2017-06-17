@@ -4,9 +4,12 @@ import styledNormalize from 'styled-normalize'
 
 export default class Doc extends Document {
   render() {
+    // styles
     const sheet = new ServerStyleSheet()
     const main = sheet.collectStyles(<Main />)
     const styleTags = sheet.getStyleElement()
+    // fonts
+    const fonts = <script type="text/javascript" src="//fast.fonts.net/jsapi/c703185d-fd95-48c6-8ad0-98c9346ad4ba.js"></script>
 
     return (
       <html>
@@ -15,6 +18,7 @@ export default class Doc extends Document {
           {normalize}
           {globalStyles}
           {styleTags}
+          {fonts}
         </Head>
         <body>
           <main>

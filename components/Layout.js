@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { rem } from '../utils/styleUtils'
 
 const Layout = (props) => (
   <LayoutContainer>
@@ -7,8 +8,7 @@ const Layout = (props) => (
 )
 
 const LayoutContainer = styled.div`
-  color: gold;
-  text-align: center;
+  ${rem('padding', 33)};
 `
 
 export default Layout

@@ -1,7 +1,8 @@
 import Layout from '../components/Layout'
+import Home from '../components/Home'
 
 export default () => (
   <Layout>
-    <h1>Hi there! 👋</h1>
+    <Home />
   </Layout>
 )
