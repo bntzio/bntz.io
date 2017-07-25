@@ -1,14 +1,14 @@
 import { css } from 'styled-components'
 
 // mixins!!
-export function rem(property, value) {
+export function rem (property, value) {
   return `
     ${property}: ${value}px;
     ${property}: ${value * 0.0625}rem;
   `
 }
 
-export function polyRem(property, value1, value2) {
+export function polyRem (property, value1, value2) {
   return `
     ${property}-top: ${value1}px;
     ${property}-right: ${value2}px;

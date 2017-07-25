@@ -80,9 +80,9 @@ const Content = styled.div`
   display: flex;
   width: 100%;
 
-  ${ media.largeDesktop`
+  ${media.largeDesktop`
     ${rem('margin-top', 64)};
-  ` }
+  `}
 `
 
 const Poster = styled.div`
@@ -90,9 +90,9 @@ const Poster = styled.div`
   display: none;
   position: relative;
 
-  ${ media.largeDesktop`
+  ${media.largeDesktop`
     display: block;
-  ` }
+  `}
 `
 
 const Word = styled.h2`
@@ -111,10 +111,10 @@ const Menu = styled.div`
   width: 100%;
   height: 100%;
 
-  ${ media.largeDesktop`
+  ${media.largeDesktop`
     flex-direction: row;
     justify-content: space-around;
-  ` }
+  `}
 `
 
 const Item = styled.div`

@@ -3,7 +3,7 @@ import { ServerStyleSheet, injectGlobal } from 'styled-components'
 import styledNormalize from 'styled-normalize'
 
 export default class Doc extends Document {
-  render() {
+  render () {
     // styles
     const sheet = new ServerStyleSheet()
     const main = sheet.collectStyles(<Main />)
