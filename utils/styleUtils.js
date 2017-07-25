@@ -32,5 +32,10 @@ export const media = {
     @media (min-width: 768px) {
       ${css(...args)}
     }
+  `,
+  largeDesktop: (...args) => css`
+    @media (min-width: 1024px) {
+      ${css(...args)}
+    }
   `
 }

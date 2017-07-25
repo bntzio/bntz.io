@@ -9,7 +9,7 @@ export default class Doc extends Document {
     const main = sheet.collectStyles(<Main />)
     const styleTags = sheet.getStyleElement()
     // fonts
-    const fonts = <script type="text/javascript" src="//fast.fonts.net/jsapi/c703185d-fd95-48c6-8ad0-98c9346ad4ba.js"></script>
+    const fonts = <script type="text/javascript" src="//fast.fonts.net/jsapi/889fd395-7d38-47c6-b3da-f01e384df9a5.js"></script>
 
     return (
       <html>
@@ -37,6 +37,7 @@ const normalize = injectGlobal`
 
 const globalStyles = injectGlobal`
   body {
+    transition: background-color .6s ease;
     background-color: #222;
     color: white;
   }
