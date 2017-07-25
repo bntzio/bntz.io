@@ -29,6 +29,7 @@ export default class extends React.Component {
     return (
       <HomeContainer>
         <Logo />
+        <HiddenLogo>Enrique Benitez</HiddenLogo>
         <Content>
           <Poster>
             <Word id="line1">Digital</Word>
@@ -36,13 +37,13 @@ export default class extends React.Component {
           </Poster>
           <Menu>
             <Item>
-              <Link><h2 onMouseOver={() => this.changeBackground('work')} onMouseLeave={this.changeBackground}>work</h2></Link>
+              <Link><h3 onMouseOver={() => this.changeBackground('work')} onMouseLeave={this.changeBackground}>work</h3></Link>
             </Item>
             <Item>
-              <Link><h2 onMouseOver={() => this.changeBackground('blog')} onMouseLeave={this.changeBackground}>blog</h2></Link>
+              <Link><h3 onMouseOver={() => this.changeBackground('blog')} onMouseLeave={this.changeBackground}>blog</h3></Link>
             </Item>
             <Item>
-              <Link><h2 onMouseOver={() => this.changeBackground('more')} onMouseLeave={this.changeBackground}>more</h2></Link>
+              <Link><h3 onMouseOver={() => this.changeBackground('more')} onMouseLeave={this.changeBackground}>more</h3></Link>
             </Item>
           </Menu>
         </Content>
@@ -68,6 +69,11 @@ const Logo = styled.div`
   height: 50px;
 `
 
+const HiddenLogo = styled.h1`
+  font-size: .5px;
+  color: transparent;
+`
+
 const Content = styled.div`
   ${rem('margin-top', 32)};
   position: relative;
@@ -83,18 +89,19 @@ const Poster = styled.div`
   width: 100%;
   display: none;
   position: relative;
-  ${rem('font-size', 160)};
 
   ${ media.largeDesktop`
     display: block;
   ` }
 `
 
-const Word = styled.div`
+const Word = styled.h2`
   color: #111;
   font-style: italic;
   text-transform: uppercase;
+  margin: 0;
   font-family: 'Frutiger LT W01_88 X Blk Cn It';
+  ${rem('font-size', 160)};
 `
 
 const Menu = styled.div`
@@ -117,7 +124,7 @@ const Item = styled.div`
 const Link = styled.a`
   display: inline-block;
 
-  h2 {
+  h3 {
     ${polyRem('padding', 8, 32)};
     ${polyRem('margin', 32, 0)};
     ${rem('font-size', 64)};
