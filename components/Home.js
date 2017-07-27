@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { TweenMax, Power0 } from 'gsap'
 import GSAP from 'react-gsap-enhancer'
 import styled from 'styled-components'
@@ -152,35 +153,35 @@ class Home extends React.Component {
           </Poster>
           <Menu id="menu">
             <Item>
-              <Link><h3 onMouseOver={() => this.changeBackground('work')} onMouseLeave={this.changeBackground}>work</h3></Link>
+              <Link href="/work"><StyledLink><h3 onMouseOver={() => this.changeBackground('work')} onMouseLeave={this.changeBackground}>work</h3></StyledLink></Link>
             </Item>
             <Item>
-              <Link><h3 onMouseOver={() => this.changeBackground('blog')} onMouseLeave={this.changeBackground}>blog</h3></Link>
+              <Link href="/blog"><StyledLink><h3 onMouseOver={() => this.changeBackground('blog')} onMouseLeave={this.changeBackground}>blog</h3></StyledLink></Link>
             </Item>
             <Item>
-              <Link>
+              <StyledLink>
                 <h3 id="more" onClick={() => this.handleShowMoreLinks()} onMouseOver={() => this.changeBackground('more')} onMouseLeave={this.changeBackground}>
                   <span>m</span><span>o</span><span>r</span><span>e</span>
                 </h3>
-              </Link>
+              </StyledLink>
             </Item>
             <Item className="links">
-              <Link><h3 onMouseOver={() => this.changeBackground('experiments')} onMouseLeave={this.changeBackground}>Experiments</h3></Link>
+              <Link href="/experiments"><StyledLink><h3 onMouseOver={() => this.changeBackground('experiments')} onMouseLeave={this.changeBackground}>Experiments</h3></StyledLink></Link>
             </Item>
             <Item className="links">
-              <Link><h3 onMouseOver={() => this.changeBackground('journal')} onMouseLeave={this.changeBackground}>Journal</h3></Link>
+              <Link href="/journal"><StyledLink><h3 onMouseOver={() => this.changeBackground('journal')} onMouseLeave={this.changeBackground}>Journal</h3></StyledLink></Link>
             </Item>
             <Item className="links">
-              <Link><h3 onMouseOver={() => this.changeBackground('now')} onMouseLeave={this.changeBackground}>Now</h3></Link>
+              <Link href="/now"><StyledLink><h3 onMouseOver={() => this.changeBackground('now')} onMouseLeave={this.changeBackground}>Now</h3></StyledLink></Link>
             </Item>
             <Item className="links">
-              <Link><h3 onMouseOver={() => this.changeBackground('life')} onMouseLeave={this.changeBackground}>Life</h3></Link>
+              <Link href="/life"><StyledLink><h3 onMouseOver={() => this.changeBackground('life')} onMouseLeave={this.changeBackground}>Life</h3></StyledLink></Link>
             </Item>
             <Item className="links">
-              <Link><h3 onMouseOver={() => this.changeBackground('newsletter')} onMouseLeave={this.changeBackground}>Newsletter</h3></Link>
+              <Link href="/newsletter"><StyledLink><h3 onMouseOver={() => this.changeBackground('newsletter')} onMouseLeave={this.changeBackground}>Newsletter</h3></StyledLink></Link>
             </Item>
             <Item className="links">
-              <Link><h3 onMouseOver={() => this.changeBackground('courses')} onMouseLeave={this.changeBackground}>Courses</h3></Link>
+              <Link href="/courses"><StyledLink><h3 onMouseOver={() => this.changeBackground('courses')} onMouseLeave={this.changeBackground}>Courses</h3></StyledLink></Link>
             </Item>
           </Menu>
         </Content>
@@ -258,7 +259,7 @@ const Item = styled.div`
   align-self: center;
 `
 
-const Link = styled.a`
+const StyledLink = styled.a`
   display: inline-block;
 
   h3 {
@@ -280,4 +281,5 @@ const Link = styled.a`
     }
   }
 `
+
 export default GSAP()(Home)
