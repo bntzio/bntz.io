@@ -16,22 +16,47 @@ class Home extends React.Component {
     const body = document.querySelector('body')
     const line1 = document.getElementById('line1')
     const line2 = document.getElementById('line2')
-    if (el === 'work') {
-      body.style.backgroundColor = 'red'
-      line1.innerHTML = 'work work'
-      line2.innerHTML = 'more work'
-    } else if (el === 'blog') {
-      body.style.backgroundColor = 'blue'
-      line1.innerHTML = 'my essays'
-      line2.innerHTML = 'and stuff'
-    } else if (el === 'more') {
-      body.style.backgroundColor = 'orange'
-      line1.innerHTML = `${this.state.moreMsg1}`
-      line2.innerHTML = `${this.state.moreMsg2}`
-    } else {
-      body.style.backgroundColor = '#222'
-      line1.innerHTML = 'Digital'
-      line2.innerHTML = 'Maker'
+    switch (el) {
+      case 'work':
+        body.style.backgroundColor = 'red'
+        line1.innerHTML = 'work work'
+        line2.innerHTML = 'more work'
+        break
+      case 'blog':
+        body.style.backgroundColor = 'blue'
+        line1.innerHTML = 'my essays'
+        line2.innerHTML = 'and stuff'
+        break
+      case 'more':
+        body.style.backgroundColor = 'orange'
+        line1.innerHTML = `${this.state.moreMsg1}`
+        line2.innerHTML = `${this.state.moreMsg2}`
+        break
+      case 'experiments':
+        body.style.backgroundColor = '#ff3b6b'
+        line1.innerHTML = 'my crazy'
+        line2.innerHTML = 'ideas'
+        break
+      case 'journal':
+        body.style.backgroundColor = '#89e051'
+        line1.innerHTML = 'writing'
+        line2.innerHTML = 'down'
+        break
+      case 'now':
+        body.style.backgroundColor = '#ff4742'
+        line1.innerHTML = 'what im'
+        line2.innerHTML = 'doing now'
+        break
+      case 'newsletter':
+        body.style.backgroundColor = '#6114cc'
+        line1.innerHTML = 'wanna'
+        line2.innerHTML = 'join?'
+        break
+      default:
+        body.style.backgroundColor = '#222'
+        line1.innerHTML = 'Digital'
+        line2.innerHTML = 'Maker'
+        return
     }
   }
 
@@ -130,16 +155,16 @@ class Home extends React.Component {
               </Link>
             </Item>
             <Item className="links">
-              <Link><h3 onMouseOver={() => this.changeBackground('more')} onMouseLeave={this.changeBackground}>Experiments</h3></Link>
+              <Link><h3 onMouseOver={() => this.changeBackground('experiments')} onMouseLeave={this.changeBackground}>Experiments</h3></Link>
             </Item>
             <Item className="links">
-              <Link><h3 onMouseOver={() => this.changeBackground('more')} onMouseLeave={this.changeBackground}>Journal</h3></Link>
+              <Link><h3 onMouseOver={() => this.changeBackground('journal')} onMouseLeave={this.changeBackground}>Journal</h3></Link>
             </Item>
             <Item className="links">
-              <Link><h3 onMouseOver={() => this.changeBackground('more')} onMouseLeave={this.changeBackground}>Now</h3></Link>
+              <Link><h3 onMouseOver={() => this.changeBackground('now')} onMouseLeave={this.changeBackground}>Now</h3></Link>
             </Item>
             <Item className="links">
-              <Link><h3 onMouseOver={() => this.changeBackground('more')} onMouseLeave={this.changeBackground}>Newsletter</h3></Link>
+              <Link><h3 onMouseOver={() => this.changeBackground('newsletter')} onMouseLeave={this.changeBackground}>Newsletter</h3></Link>
             </Item>
           </Menu>
         </Content>
