@@ -1,7 +1,12 @@
 {
   "extends": "standard",
   "rules": {
-    "react/jsx-uses-vars": [2]
+    "react/jsx-uses-vars": [2],
+    "no-useless-return": 0,
+    "no-extra-boolean-cast": 0,
   },
-  "plugins": ["react"]
+  "plugins": ["react"],
+  "env": {
+    "browser": true
+  }
 }

@@ -6,9 +6,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "gsap": "^1.20.2",
     "next": "^2.4.3",
     "react": "^15.6.0",
     "react-dom": "^15.6.0",
+    "react-gsap-enhancer": "^0.3.0",
     "styled-components": "^2.0.1",
     "styled-normalize": "^2.0.0"
   },

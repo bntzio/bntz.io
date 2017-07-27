@@ -41,4 +41,7 @@ const globalStyles = injectGlobal`
     background-color: #222;
     color: white;
   }
+  .links {
+    display: none;
+  }
 `

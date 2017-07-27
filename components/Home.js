@@ -1,8 +1,17 @@
 import React from 'react'
+import { TweenMax, Power0 } from 'gsap'
+import GSAP from 'react-gsap-enhancer'
 import styled from 'styled-components'
 import { polyRem, rem, media } from '../utils/styleUtils'
 
-export default class extends React.Component {
+class Home extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.state = { more: false, moreMsg1: 'want more?', moreMsg2: 'really?' }
+    this.showMoreLinks = this.showMoreLinks.bind(this)
+    this.changeBackground = this.changeBackground.bind(this)
+  }
   changeBackground (el) {
     const body = document.querySelector('body')
     const line1 = document.getElementById('line1')
@@ -17,25 +26,96 @@ export default class extends React.Component {
       line2.innerHTML = 'and stuff'
     } else if (el === 'more') {
       body.style.backgroundColor = 'orange'
-      line1.innerHTML = 'want more?'
-      line2.innerHTML = 'really?'
+      line1.innerHTML = `${this.state.moreMsg1}`
+      line2.innerHTML = `${this.state.moreMsg2}`
     } else {
       body.style.backgroundColor = '#222'
       line1.innerHTML = 'Digital'
       line2.innerHTML = 'Maker'
     }
   }
+
+  showMoreLinks ({ target }) {
+    const words = document.getElementById('poster').children
+    const letters = document.getElementById('more').children
+    const tween = TweenMax.to(words, 0.6, {
+      ease: Power0.easeNone,
+      onStart: () => {
+        this.setState({ more: !this.state.more })
+        this.setState({ moreMsg1: this.state.more ? 'too much?' : 'want more?', moreMsg2: this.state.more ? 'told ya' : 'really?' })
+        TweenMax.staggerTo(letters, 0.2, {
+          autoAlpha: 0,
+          ease: Power0.easeNone,
+          y: 50
+        }, 0.1)
+      },
+      onComplete: () => {
+        Object.keys(letters).map((key) => {
+          switch (key) {
+            case '0':
+              this.state.more ? letters[key].innerHTML = 'l' : letters[key].innerHTML = 'm'
+              break
+            case '1':
+              this.state.more ? letters[key].innerHTML = 'e' : letters[key].innerHTML = 'o'
+              break
+            case '2':
+              this.state.more ? letters[key].innerHTML = 's' : letters[key].innerHTML = 'r'
+              break
+            case '3':
+              this.state.more ? letters[key].innerHTML = 's' : letters[key].innerHTML = 'e'
+              break
+            default:
+              return
+          }
+        })
+        TweenMax.staggerTo(letters, 0.2, {
+          autoAlpha: 1,
+          ease: Power0.easeNone,
+          y: 0,
+          display: 'inline'
+        }, 0.1, this.showOrHideLinks())
+      }
+    })
+    return tween
+  }
+
+  showOrHideLinks () {
+    if (this.state.more) {
+      TweenMax.to('#menu', 0.4, {
+        scale: 0.4,
+        ease: Power0.easeNone,
+        onStart: () => {
+          TweenMax.to('.links', 1, {
+            ease: Power0.easeNone,
+            display: 'block',
+            scale: 1
+          })
+        }
+      })
+    } else {
+      TweenMax.to('.links', 0.1, {
+        ease: Power0.easeNone,
+        display: 'none',
+        scale: 0
+      })
+    }
+  }
+
+  handleShowMoreLinks () {
+    this.addAnimation(this.showMoreLinks)
+  }
+
   render () {
     return (
       <HomeContainer>
         <Logo />
         <HiddenLogo>Enrique Benitez</HiddenLogo>
         <Content>
-          <Poster>
+          <Poster id="poster">
             <Word id="line1">Digital</Word>
             <Word id="line2">Maker</Word>
           </Poster>
-          <Menu>
+          <Menu id="menu">
             <Item>
               <Link><h3 onMouseOver={() => this.changeBackground('work')} onMouseLeave={this.changeBackground}>work</h3></Link>
             </Item>
@@ -43,7 +123,23 @@ export default class extends React.Component {
               <Link><h3 onMouseOver={() => this.changeBackground('blog')} onMouseLeave={this.changeBackground}>blog</h3></Link>
             </Item>
             <Item>
-              <Link><h3 onMouseOver={() => this.changeBackground('more')} onMouseLeave={this.changeBackground}>more</h3></Link>
+              <Link>
+                <h3 id="more" onClick={() => this.handleShowMoreLinks()} onMouseOver={() => this.changeBackground('more')} onMouseLeave={this.changeBackground}>
+                  <span>m</span><span>o</span><span>r</span><span>e</span>
+                </h3>
+              </Link>
+            </Item>
+            <Item className="links">
+              <Link><h3 onMouseOver={() => this.changeBackground('more')} onMouseLeave={this.changeBackground}>Experiments</h3></Link>
+            </Item>
+            <Item className="links">
+              <Link><h3 onMouseOver={() => this.changeBackground('more')} onMouseLeave={this.changeBackground}>Journal</h3></Link>
+            </Item>
+            <Item className="links">
+              <Link><h3 onMouseOver={() => this.changeBackground('more')} onMouseLeave={this.changeBackground}>Now</h3></Link>
+            </Item>
+            <Item className="links">
+              <Link><h3 onMouseOver={() => this.changeBackground('more')} onMouseLeave={this.changeBackground}>Newsletter</h3></Link>
             </Item>
           </Menu>
         </Content>
@@ -137,5 +233,10 @@ const Link = styled.a`
     &:hover {
       cursor: pointer;
     }
+
+    span {
+      display: inline-block;
+    }
   }
 `
+export default GSAP()(Home)
