@@ -48,9 +48,19 @@ class Home extends React.Component {
         line2.innerHTML = 'doing now'
         break
       case 'newsletter':
-        body.style.backgroundColor = '#6114cc'
+        body.style.backgroundColor = '#9000f0'
         line1.innerHTML = 'wanna'
         line2.innerHTML = 'join?'
+        break
+      case 'life':
+        body.style.backgroundColor = '#ff00bf'
+        line1.innerHTML = 'life'
+        line2.innerHTML = 'logging'
+        break
+      case 'courses':
+        body.style.backgroundColor = '#e01563'
+        line1.innerHTML = 'future'
+        line2.innerHTML = 'makers'
         break
       default:
         body.style.backgroundColor = '#222'
@@ -164,7 +174,13 @@ class Home extends React.Component {
               <Link><h3 onMouseOver={() => this.changeBackground('now')} onMouseLeave={this.changeBackground}>Now</h3></Link>
             </Item>
             <Item className="links">
+              <Link><h3 onMouseOver={() => this.changeBackground('life')} onMouseLeave={this.changeBackground}>Life</h3></Link>
+            </Item>
+            <Item className="links">
               <Link><h3 onMouseOver={() => this.changeBackground('newsletter')} onMouseLeave={this.changeBackground}>Newsletter</h3></Link>
+            </Item>
+            <Item className="links">
+              <Link><h3 onMouseOver={() => this.changeBackground('courses')} onMouseLeave={this.changeBackground}>Courses</h3></Link>
             </Item>
           </Menu>
         </Content>

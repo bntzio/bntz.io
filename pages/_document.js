@@ -43,5 +43,9 @@ const globalStyles = injectGlobal`
   }
   .links {
     display: none;
+
+    &:last-child {
+      margin-bottom: 7rem;
+    }
   }
 `
