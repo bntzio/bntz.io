@@ -1,12 +1,12 @@
 import withRedux from 'next-redux-wrapper'
 import makeStore from './../store/makeStore'
 import Layout from '../components/Layout'
-import Home from '../components/Home'
+import Work from '../components/Work'
 
-const app = () => (
+const work = () => (
   <Layout>
-    <Home />
+    <Work />
   </Layout>
 )
 
-export default withRedux(makeStore)(app)
+export default withRedux(makeStore)(work)

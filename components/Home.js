@@ -1,9 +1,12 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import Link from 'next/link'
 import { TweenMax, Power0 } from 'gsap'
 import GSAP from 'react-gsap-enhancer'
 import styled from 'styled-components'
 import { polyRem, rem, media } from '../utils/styleUtils'
+
+const actions = require('./../actions/actions')
 
 class Home extends React.Component {
   constructor (props) {
@@ -142,6 +145,8 @@ class Home extends React.Component {
   }
 
   render () {
+    const { dispatch } = this.props
+
     return (
       <HomeContainer>
         <Logo />
@@ -152,7 +157,7 @@ class Home extends React.Component {
             <Word id="line2">Maker</Word>
           </Poster>
           <Menu id="menu">
-            <Item>
+            <Item onClick={() => dispatch(actions.setBackground('work'))}>
               <Link href="/work"><StyledLink><h3 onMouseOver={() => this.changeBackground('work')} onMouseLeave={this.changeBackground}>work</h3></StyledLink></Link>
             </Item>
             <Item>
@@ -272,6 +277,13 @@ const StyledLink = styled.a`
     text-transform: uppercase;
     text-align: center;
 
+    ${media.largeDesktop`
+      padding-top: 0;
+      padding-bottom: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    `}
+
     &:hover {
       cursor: pointer;
     }
@@ -282,4 +294,4 @@ const StyledLink = styled.a`
   }
 `
 
-export default GSAP()(Home)
+export default connect()(GSAP()(Home))
