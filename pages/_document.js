@@ -1,6 +1,7 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet, injectGlobal } from 'styled-components'
 import styledNormalize from 'styled-normalize'
+import { rem, media } from './../utils/styleUtils'
 
 export default class Doc extends Document {
   render () {
@@ -45,7 +46,11 @@ const globalStyles = injectGlobal`
     display: none;
 
     &:last-child {
-      margin-bottom: 7rem;
+      ${rem('margin-bottom', 112)};
+
+      ${media.largeDesktop`
+        margin-bottom: 0;
+      `}
     }
   }
 `
