@@ -1,4 +1,5 @@
 const path = require('path')
+const jsonSummary = require('./content/summary.json')
 
 module.exports = {
   webpack: (config, { dev }) => {
@@ -21,5 +22,35 @@ module.exports = {
     }
 
     return config
+  },
+  exportPathMap: () => {
+    const posts = {}
+    const paths = {}
+    jsonSummary.fileMap && Object.keys(jsonSummary.fileMap)
+      .forEach((file) => {
+        const fileObj = jsonSummary.fileMap[file]
+        const obj = {}
+        if (fileObj.paths) {
+          // Handle custom paths/aliases
+          obj.page = fileObj.page
+          obj.query = { filePath: fileObj.filePath }
+          fileObj.paths.forEach((path) => {
+            paths[path] = obj
+          })
+        } else if (file.indexOf('content/posts') === 0) {
+          // Handle posts
+          const page = file.split('content').join('').split('.json').join('')
+          posts[page] = {
+            page: '/post',
+            query: {
+              fullUrl: page
+            }
+          }
+        }
+      })
+
+    return Object.assign({}, {
+      '/': { page: '/' }
+    }, posts, paths) // Aliases
   }
 }

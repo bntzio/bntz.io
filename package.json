@@ -1,9 +1,16 @@
 {
-  "name": "create-next-example-app",
+  "name": "bntz.io",
+  "author": "Enrique Benitez <bntz.io>",
   "scripts": {
+    "start": "node server.js",
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "build:content": "processmd content/**/*.md --outputDir content --summaryOutput content/summary.json",
+    "build:content:watch": "processmd content/**/*.md --outputDir content --summaryOutput content/summary.json --watch",
+    "build:export": "npm run build && npm run export",
+    "export": "next export && cp -R static/* out/",
+    "deploy": "npm run build:content && npm run build:export && mv out public",
+    "server": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "gsap": "^1.20.2",
@@ -28,6 +35,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^7.1.0",
     "eslint-plugin-standard": "^3.0.1",
+    "processmd": "^3.1.4",
     "remote-redux-devtools": "^0.5.12"
   }
 }

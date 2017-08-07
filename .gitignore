@@ -1,5 +1,3 @@
-# See https://help.github.com/ignore-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
 
@@ -10,10 +8,11 @@
 /build
 /dist
 /.next
+/out
+/public
+content/**/*.json
 
 # misc
 .DS_Store
 .env
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+*.log
