@@ -1,9 +1,25 @@
-import React from 'react'
+import uuid from 'uuid/v4'
+import { Link } from '../routes'
 
-class Blog extends React.Component {
-  render () {
-    return <h1>Blog!!</h1>
+const Blog = ({ posts }) => {
+  const renderPosts = () => {
+    return posts.map(post => {
+      return (
+        <div key={uuid()}>
+          <h2>
+            <Link route="post" params={{ slug: post.slug }}>
+              <a>{post.title}</a>
+            </Link>
+          </h2>
+        </div>
+      )
+    })
   }
+  return (
+    <div>
+      {renderPosts()}
+    </div>
+  )
 }
 
 export default Blog

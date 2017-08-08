@@ -1,21 +1,26 @@
 {
   "name": "create-next-example-app",
   "scripts": {
-    "dev": "next",
+    "processmd": "processmd content/**/*.md --outputDir static/content --summaryOutput content/summary.json",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start"
+    "start": "NODE_ENV=production next start"
   },
   "dependencies": {
+    "express": "^4.15.4",
     "gsap": "^1.20.2",
-    "next": "^2.4.3",
+    "isomorphic-unfetch": "^2.0.0",
+    "next": "beta",
     "next-redux-wrapper": "^1.3.1",
+    "next-routes": "^1.0.40",
     "react": "^15.6.0",
     "react-dom": "^15.6.0",
     "react-gsap-enhancer": "^0.3.0",
     "react-redux": "^5.0.5",
     "redux": "^3.7.2",
     "styled-components": "^2.0.1",
-    "styled-normalize": "^2.0.0"
+    "styled-normalize": "^2.0.0",
+    "uuid": "^3.1.0"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.1.4",
@@ -28,6 +33,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^7.1.0",
     "eslint-plugin-standard": "^3.0.1",
+    "processmd": "^3.1.4",
     "remote-redux-devtools": "^0.5.12"
   }
 }
