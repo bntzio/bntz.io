@@ -10,7 +10,7 @@ const blog = ({ posts }) => (
 )
 
 blog.getInitialProps = async ({ req }) => {
-  const baseUrl = process.NODE_ENV === 'production' ? 'https://bntz.io' : 'http://localhost:3000'
+  const baseUrl = process.env.NODE_ENV === 'production' ? 'https://bntz.io' : 'http://localhost:3000'
   const paths = await getPaths()
   let posts = []
 

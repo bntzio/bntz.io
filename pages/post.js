@@ -9,7 +9,7 @@ const post = ({ title, body }) => (
 )
 
 const findBySlug = async (slug) => {
-  const baseUrl = process.NODE_ENV === 'production' ? 'https://bntz.io' : 'http://localhost:3000'
+  const baseUrl = process.env.NODE_ENV === 'production' ? 'https://bntz.io' : 'http://localhost:3000'
   const slugsAndPaths = await getSlugsAndPaths()
   let postPath
   let post

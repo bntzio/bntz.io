@@ -1,10 +1,27 @@
 {
-  "name": "create-next-example-app",
+  "name": "bntz",
+  "main": "server.js",
+  "now": {
+    "alias": "bntz.io",
+    "files": [
+      "actions",
+      "components",
+      "content",
+      "pages",
+      "reducers",
+      "static",
+      "store",
+      "utils",
+      "routes.js",
+      "server.js"
+    ]
+  },
   "scripts": {
     "processmd": "processmd content/**/*.md --outputDir static/content --summaryOutput content/summary.json",
     "dev": "node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production next start"
+    "start": "NODE_ENV=production next start",
+    "now": "npm run build && now && now alias"
   },
   "dependencies": {
     "express": "^4.15.4",
