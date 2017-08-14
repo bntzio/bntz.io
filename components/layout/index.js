@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { rem } from '../utils/styleUtils'
+import { rem } from '../../utils/styleUtils'
 
 const Layout = (props) => (
   <LayoutContainer>

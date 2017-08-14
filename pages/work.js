@@ -1,6 +1,6 @@
 import withRedux from 'next-redux-wrapper'
 import makeStore from './../store/makeStore'
-import Layout from '../components/Layout'
+import Layout from '../components/layout/'
 import Work from '../components/Work'
 
 const work = () => (
