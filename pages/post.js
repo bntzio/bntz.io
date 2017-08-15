@@ -1,10 +1,10 @@
+import Post from '../components/Post'
 import Layout from '../components/layout/'
 import { getSlugsAndPaths } from '../utils/content'
 
 const post = ({ title, body }) => (
   <Layout>
-    <h2>{title}</h2>
-    <div dangerouslySetInnerHTML={{ __html: body }}></div>
+    <Post title={title} body={body} />
   </Layout>
 )
 

@@ -1,7 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
-import { rem, polyRem, media } from '../utils/styleUtils'
+import Back from './common/Back'
+import { rem, media } from '../utils/styleUtils'
 
 class Work extends React.Component {
   componentDidMount () {
@@ -35,11 +36,9 @@ class Work extends React.Component {
   render () {
     return (
       <Container>
-        <Back>
-          <Link href="/">
-            <Arrow />
-          </Link>
-        </Back>
+        <Link href="/">
+          <a><Back /></a>
+        </Link>
         <Frames>
           <Link href="/">
             <Frame onMouseMove={this.transformFrame} onMouseLeave={this.resetTransform}>
@@ -100,27 +99,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-`
-
-const Back = styled.div`
-  ${polyRem('padding', 35, 0)};
-
-  ${media.desktop`
-    ${polyRem('padding', 35, 25)};
-  `}
-`
-
-const Arrow = styled.div`
-  cursor: pointer;
-  background-image: url('static/assets/icons/arrow-white-left.svg');
-  ${rem('width', 22)};
-  ${rem('height', 22)};
-  svg {
-    path, polygon, polyline, rect, line, circle {
-      stroke: white;
-      fill: white;
-    }
-  }
 `
 
 const Frames = styled.div`

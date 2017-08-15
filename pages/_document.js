@@ -11,6 +11,11 @@ export default class Doc extends Document {
     const styleTags = sheet.getStyleElement()
     // fonts
     const fonts = <script type="text/javascript" src="//fast.fonts.net/jsapi/889fd395-7d38-47c6-b3da-f01e384df9a5.js"></script>
+    // jquery
+    const jquery = <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    // selection-sharer (https://github.com/xdamman/selection-sharer)
+    const selectionSharerScripts = <script src="/static/assets/javascripts/selection-sharer.min.js"></script>
+    const selectionSharerStyles = <link rel="stylesheet" href="/static/assets/stylesheets/selection-sharer.min.css" />
 
     return (
       <html>
@@ -19,7 +24,10 @@ export default class Doc extends Document {
           {normalize}
           {globalStyles}
           {styleTags}
+          {selectionSharerStyles}
           {fonts}
+          {jquery}
+          {selectionSharerScripts}
         </Head>
         <body>
           <main>
