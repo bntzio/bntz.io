@@ -1,6 +1,7 @@
 import React from 'react'
+import Link from 'next/link'
 import styled from 'styled-components'
-import { rem, media } from '../utils/styleUtils'
+import { rem, polyRem, media } from '../utils/styleUtils'
 
 class Work extends React.Component {
   componentDidMount () {
@@ -9,61 +10,86 @@ class Work extends React.Component {
   }
   transformFrame (el) {
     if (window.innerWidth > 768) {
-      let xAngle = 0
-      let yAngle = 0
-      const z = 50
-      const xRel = el.clientX - el.target.offsetLeft
-      const yRel = el.clientY - el.target.offsetTop
-      const width = el.target.offsetWidth
-      yAngle = -(0.5 - (xRel / width)) * 40
-      xAngle = (0.5 - (yRel / width)) * 40
-      el.target.style.transform = `perspective(525px) translateZ(${z}px) rotateX(${xAngle}deg) rotateY(${yAngle}deg)`
-      el.target.style.transition = 'none'
+      if (el.target.tagName === 'DIV') {
+        let xAngle = 0
+        let yAngle = 0
+        const z = 50
+        const xRel = el.clientX - el.target.offsetLeft
+        const yRel = el.clientY - el.target.offsetTop
+        const width = el.target.offsetWidth
+        yAngle = -(0.5 - (xRel / width)) * 30
+        xAngle = (0.5 - (yRel / width)) * 30
+        el.target.style.transform = `perspective(525px) translateZ(${z}px) rotateX(${xAngle}deg) rotateY(${yAngle}deg)`
+        el.target.style.transition = 'none'
+      }
     }
   }
   resetTransform (el) {
     if (window.innerWidth > 768) {
-      el.target.style.transform = 'perspective(525px) translateZ(0) rotateX(0deg) rotateY(0deg)'
-      el.target.style.transition = 'all 150ms linear 0s'
+      if (el.target.tagName === 'DIV') {
+        el.target.style.transform = 'perspective(525px) translateZ(0) rotateX(0deg) rotateY(0deg)'
+        el.target.style.transition = 'all 150ms linear 0s'
+      }
     }
   }
   render () {
     return (
       <Container>
         <Back>
-          <Arrow>👈</Arrow>
+          <Link href="/">
+            <Arrow />
+          </Link>
         </Back>
         <Frames>
-          <Frame onMouseMove={this.transformFrame} onMouseLeave={this.resetTransform}>
-            First Project
-            <br/>
-            Read Case Study
-          </Frame>
-          <Frame onMouseMove={this.transformFrame} onMouseLeave={this.resetTransform}>
-            Second Project
-            <br/>
-            Read Case Study
-          </Frame>
-          <Frame onMouseMove={this.transformFrame} onMouseLeave={this.resetTransform}>
-            Third Project
-            <br/>
-            Read Case Study
-          </Frame>
-          <Frame onMouseMove={this.transformFrame} onMouseLeave={this.resetTransform}>
-            Fourth Project
-            <br/>
-            Read Case Study
-          </Frame>
-          <Frame onMouseMove={this.transformFrame} onMouseLeave={this.resetTransform}>
-            Fifth Project
-            <br/>
-            Read Case Study
-          </Frame>
-          <Frame onMouseMove={this.transformFrame} onMouseLeave={this.resetTransform}>
-            Sixth Project
-            <br/>
-            Read Case Study
-          </Frame>
+          <Link href="/">
+            <Frame onMouseMove={this.transformFrame} onMouseLeave={this.resetTransform}>
+              Spoil Your Enemies
+              <br/><br/>
+              Send Anonymous TV Show Spoilers via SMS
+            </Frame>
+          </Link>
+          <Link href="/">
+            <Frame onMouseMove={this.transformFrame} onMouseLeave={this.resetTransform}>
+              Wipe Modules
+              <br/><br/>
+              A little agent that removes the node_modules folder of non-active projects
+            </Frame>
+          </Link>
+          <Link href="/">
+            <Frame onMouseMove={this.transformFrame} onMouseLeave={this.resetTransform}>
+              HexCandy
+              <br/><br/>
+              Delicious color tracker for designers
+            </Frame>
+          </Link>
+          <Link href="/">
+            <Frame onMouseMove={this.transformFrame} onMouseLeave={this.resetTransform}>
+              Gitsy
+              <br/><br/>
+              Organize your GitHub stars like a true stargazer
+            </Frame>
+          </Link>
+          <Link href="/">
+            <Frame onMouseMove={this.transformFrame} onMouseLeave={this.resetTransform}>
+              Rejection Challenges
+              <br/><br/>
+              Achieve your true potential by overcoming fear of rejection
+            </Frame>
+          </Link>
+          <Link href="/">
+            <Frame onMouseMove={this.transformFrame} onMouseLeave={this.resetTransform}>
+              GaryQuotes
+              <br/><br/>
+              Super awesome wallpapers starring the best Gary Vaynerchuk quotes
+            </Frame>
+          </Link>
+          <Link href="/">
+            <Frame onMouseMove={this.transformFrame} onMouseLeave={this.resetTransform}>
+              Phoenix
+              <br/><br/>
+              Send a last message to the people you love when you die
+            </Frame>
+          </Link>
         </Frames>
       </Container>
     )
@@ -77,11 +103,24 @@ const Container = styled.div`
 `
 
 const Back = styled.div`
-  padding: 1rem;
+  ${polyRem('padding', 35, 0)};
+
+  ${media.desktop`
+    ${polyRem('padding', 35, 25)};
+  `}
 `
 
 const Arrow = styled.div`
   cursor: pointer;
+  background-image: url('static/assets/icons/arrow-white-left.svg');
+  ${rem('width', 22)};
+  ${rem('height', 22)};
+  svg {
+    path, polygon, polyline, rect, line, circle {
+      stroke: white;
+      fill: white;
+    }
+  }
 `
 
 const Frames = styled.div`
@@ -103,10 +142,9 @@ const Frame = styled.div`
   align-content: center;
   box-sizing: border-box;
   text-align: center;
-
-  &:hover {
-
-  }
+  padding: 1rem;
+  cursor: pointer;
+  font-family: 'Futura PT W01 Medium';
 
   ${media.desktop`
     flex: 0 0 28%;
