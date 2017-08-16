@@ -1,7 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
-import Back from '../components/common/Back'
+import GSAP from 'react-gsap-enhancer'
+import { TimelineMax, Power0, Back } from 'gsap'
+import BackButton from '../components/common/BackButton'
 import { rem, media } from '../utils/styleUtils'
 
 class Post extends React.Component {
@@ -10,8 +12,36 @@ class Post extends React.Component {
     const $ = window.jQuery
     body.style.backgroundColor = 'white'
     $('p').selectionSharer()
-  }
 
+    const anim1 = this.addAnimation(this.contentAnimation)
+    const anim2 = this.addAnimation(this.arrowAnimation)
+    anim1.eventCallback('onStart', () => {
+      anim2.pause()
+    })
+    anim1.eventCallback('onComplete', () => {
+      anim2.restart()
+    })
+    anim1.play()
+  }
+  contentAnimation () {
+    const content = document.getElementById('content')
+    return new TimelineMax().from(content, 0.3, {
+      y: 50,
+      autoAlpha: 0,
+      ease: Power0.easeIn
+    })
+  }
+  arrowAnimation () {
+    const el = document.getElementById('arrow')
+    return new TimelineMax().fromTo(el, 0.6, {
+      x: 50,
+      autoAlpha: 0
+    }, {
+      x: 0,
+      autoAlpha: 1,
+      ease: Back.easeInOut.config(2)
+    })
+  }
   render () {
     const { title, body } = this.props
 
@@ -19,11 +49,13 @@ class Post extends React.Component {
       <Container>
         <MiniNav>
           <Link href="/blog">
-            <a><Back black /></a>
+            <a><BackButton black /></a>
           </Link>
         </MiniNav>
-        <Title>{title}</Title>
-        <Body dangerouslySetInnerHTML={{ __html: body }}></Body>
+        <div id="content">
+          <Title>{title}</Title>
+          <Body dangerouslySetInnerHTML={{ __html: body }}></Body>
+        </div>
       </Container>
     )
   }
@@ -79,4 +111,4 @@ const Body = styled.div`
  }
 `
 
-export default Post
+export default GSAP()(Post)

@@ -2,7 +2,7 @@ import React from 'react'
 import uuid from 'uuid/v4'
 import Link from 'next/link'
 import styled from 'styled-components'
-import Back from './common/Back'
+import BackButton from './common/BackButton'
 import projectsData from '../data/projects'
 import Project from './Project'
 
@@ -15,7 +15,7 @@ class Work extends React.Component {
     return (
       <Container>
         <Link href="/">
-          <a><Back /></a>
+          <a><BackButton /></a>
         </Link>
         <Frames>
           { projectsData.map((project) => {

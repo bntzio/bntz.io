@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { rem, media } from '../../utils/styleUtils'
 
-const Back = (props) => {
+const BackButton = (props) => {
   return (
     <Container>
       <Arrow {...props} id="arrow" />
@@ -27,4 +27,4 @@ const Arrow = styled.div`
   ${rem('height', 22)};
 `
 
-export default Back
+export default BackButton
