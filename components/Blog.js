@@ -14,8 +14,10 @@ class Blog extends React.Component {
 
     const anim1 = this.addAnimation(this.postsAnimation)
     const anim2 = this.addAnimation(this.arrowAnimation)
+    const anim3 = this.addAnimation(this.titleAnimation)
     anim1.eventCallback('onStart', () => {
       anim2.pause()
+      anim3.play()
     })
     anim1.eventCallback('onComplete', () => {
       anim2.restart()
@@ -41,6 +43,15 @@ class Blog extends React.Component {
       ease: Power0.easeNone
     }, 0.2)
   }
+  titleAnimation () {
+    const title = document.getElementById('title')
+    return new TimelineMax().fromTo(title, 0.5, {
+      autoAlpha: 0
+    }, {
+      autoAlpha: 1,
+      ease: Power0.easeNone
+    })
+  }
   renderPosts () {
     const { posts } = this.props
     return posts.map(post => {
@@ -58,9 +69,12 @@ class Blog extends React.Component {
   render () {
     return (
       <Container>
-        <Link route="index">
-          <a><BackButton /></a>
-        </Link>
+        <MiniNav>
+          <Link route="index">
+            <a><BackButton /></a>
+          </Link>
+          <Title id="title">Articles</Title>
+        </MiniNav>
         {this.renderPosts()}
       </Container>
     )
@@ -71,6 +85,16 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+`
+
+const MiniNav = styled.nav`
+  display: flex;
+  align-items: center;
+`
+
+const Title = styled.h4`
+  font-family: 'Proxima N W01 Bold';
+  ${rem('font-size', 20)};
 `
 
 const PostItem = styled.div`

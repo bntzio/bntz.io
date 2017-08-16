@@ -9,8 +9,10 @@ class Project extends React.Component {
   componentDidMount () {
     const anim1 = this.addAnimation(this.framesAnimation)
     const anim2 = this.addAnimation(this.arrowAnimation)
+    const anim3 = this.addAnimation(this.titleAnimation)
     anim1.eventCallback('onStart', () => {
       anim2.pause()
+      anim3.play()
     })
     anim1.eventCallback('onComplete', () => {
       anim2.restart()
@@ -31,11 +33,19 @@ class Project extends React.Component {
   framesAnimation () {
     const projects = document.getElementsByClassName('project')
     const arrow = document.getElementById('arrow')
-    const tween = new TimelineMax().set(arrow, { autoAlpha: 0 }).staggerFromTo(projects, 0.3, {
+    return new TimelineMax().set(arrow, { autoAlpha: 0 }).staggerFromTo(projects, 0.3, {
       autoAlpha: 0,
       ease: Power0.easeNone
     }, { autoAlpha: 1, ease: Power0.easeNone }, 0.1)
-    return tween
+  }
+  titleAnimation () {
+    const title = document.getElementById('title')
+    return new TimelineMax().fromTo(title, 0.5, {
+      autoAlpha: 0
+    }, {
+      autoAlpha: 1,
+      ease: Power0.easeNone
+    })
   }
   transformFrame (el) {
     if (window.innerWidth > 768) {
