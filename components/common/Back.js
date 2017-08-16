@@ -4,7 +4,7 @@ import { rem, media } from '../../utils/styleUtils'
 const Back = (props) => {
   return (
     <Container>
-      <Arrow {...props} />
+      <Arrow {...props} id="arrow" />
     </Container>
   )
 }
