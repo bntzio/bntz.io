@@ -1,29 +1,16 @@
 const summary = require('../content/summary.json')
 
-// get posts paths from the summary.sourceFileArray (blog)
-export function getPostPaths () {
-  const postPathsArray = summary.sourceFileArray
-  let newPostPathsArray = []
-  postPathsArray.forEach((postPath, i) => {
-    if (postPath !== 'content/index.md' && postPath.includes('content/posts') === true) {
-      newPostPathsArray.push(postPath)
+// get posts/entries paths from the summary.sourceFileArray (blog + journal)
+export function getPaths (type) {
+  const pathsArray = summary.sourceFileArray
+  let newPathsArray = []
+  pathsArray.forEach((path, i) => {
+    if (path !== 'content/index.md' && path.includes(`content/${type}`) === true) {
+      newPathsArray.push(path)
     }
   })
 
-  return newPostPathsArray
-}
-
-// get entry paths from the summary.sourceFileArray (journal)
-export function getEntryPaths () {
-  const entryPathsArray = summary.sourceFileArray
-  let newEntryPathsArray = []
-  entryPathsArray.forEach((entryPath, i) => {
-    if (entryPath !== 'content/index.md' && entryPath.includes('content/entries') === true) {
-      newEntryPathsArray.push(entryPath)
-    }
-  })
-
-  return newEntryPathsArray
+  return newPathsArray
 }
 
 // get the slug and path for each summary.fileMap

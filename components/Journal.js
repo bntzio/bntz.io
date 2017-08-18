@@ -1,11 +1,8 @@
 import React from 'react'
 import GSAP from 'react-gsap-enhancer'
-import styled from 'styled-components'
-import { Link } from '../routes'
-import uuid from 'uuid/v4'
+import h from '../utils/helpers'
 import Container from './common/Container'
 import MiniNav from './common/MiniNav'
-import { rem, media } from '../utils/styleUtils'
 import { arrowAnimation, titleAnimation, entriesAnimation } from '../utils/animations'
 
 class Journal extends React.Component {
@@ -25,53 +22,16 @@ class Journal extends React.Component {
     })
     anim1.play()
   }
-  renderEntries () {
-    const { entries } = this.props
-    return entries.map(entry => {
-      return (
-        <EntryItem key={uuid()} className="entry">
-          <h2>
-            <Link route="entry" params={{ slug: entry.slug }}>
-              <a>{entry.title}</a>
-            </Link>
-          </h2>
-        </EntryItem>
-      )
-    })
-  }
   render () {
+    const { entries } = this.props
+
     return (
       <Container>
         <MiniNav url="/" title="Daily Journal" />
-        {this.renderEntries()}
+        {h.renderListItems(entries, 'entry')}
       </Container>
     )
   }
 }
-
-const EntryItem = styled.div`
-  ${rem('margin-bottom', -8)};
-
-  ${media.desktop`
-    ${rem('margin-left', 33)};
-    ${rem('margin-right', 33)};
-    ${rem('margin-bottom', -16)};
-  `}
-
-  h2 {
-    font-family: 'Proxima N W01 Smbd';
-    font-size: 20px;
-
-    a {
-      color: white;
-      text-decoration: none;
-
-      &:hover {
-        cursor: default;
-        border-bottom: 3px solid white;
-      }
-    }
-  }
-`
 
 export default GSAP()(Journal)

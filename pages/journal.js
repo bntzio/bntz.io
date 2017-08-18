@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-unfetch'
 import Layout from '../components/layout/'
 import Journal from '../components/Journal'
-import { getEntryPaths } from '../utils/content'
+import { getPaths } from '../utils/content'
 
 const journal = ({ entries }) => (
   <Layout>
@@ -11,7 +11,7 @@ const journal = ({ entries }) => (
 
 journal.getInitialProps = async ({ req }) => {
   const baseUrl = process.env.NODE_ENV === 'production' ? 'https://bntz.io' : 'http://localhost:3000'
-  const paths = await getEntryPaths()
+  const paths = await getPaths('entries')
   let entries = []
 
   for (let path of paths) {

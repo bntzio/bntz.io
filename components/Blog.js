@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import GSAP from 'react-gsap-enhancer'
-import uuid from 'uuid/v4'
 import BackButton from './common/BackButton'
 import Container from './common/Container'
+import h from '../utils/helpers'
 import { Link } from '../routes'
-import { rem, media } from '../utils/styleUtils'
+import { rem } from '../utils/styleUtils'
 import { arrowAnimation, titleAnimation, postsAnimation } from '../utils/animations'
 
 class Blog extends React.Component {
@@ -25,21 +25,9 @@ class Blog extends React.Component {
     })
     anim1.play()
   }
-  renderPosts () {
-    const { posts } = this.props
-    return posts.map(post => {
-      return (
-        <PostItem key={uuid()} className="post">
-          <h2>
-            <Link route="post" params={{ slug: post.slug }}>
-              <a>{post.title}</a>
-            </Link>
-          </h2>
-        </PostItem>
-      )
-    })
-  }
   render () {
+    const { posts } = this.props
+
     return (
       <Container>
         <BlogNav>
@@ -48,7 +36,7 @@ class Blog extends React.Component {
           </Link>
           <Title id="title">Articles</Title>
         </BlogNav>
-        {this.renderPosts()}
+        {h.renderListItems(posts, 'post')}
       </Container>
     )
   }
@@ -62,31 +50,6 @@ const BlogNav = styled.nav`
 const Title = styled.h4`
   font-family: 'Proxima N W01 Bold';
   ${rem('font-size', 20)};
-`
-
-const PostItem = styled.div`
-  ${rem('margin-bottom', -8)};
-
-  ${media.desktop`
-    ${rem('margin-left', 33)};
-    ${rem('margin-right', 33)};
-    ${rem('margin-bottom', -16)};
-  `}
-
-  h2 {
-    font-family: 'Proxima N W01 Smbd';
-    font-size: 20px;
-
-    a {
-      color: white;
-      text-decoration: none;
-
-      &:hover {
-        cursor: default;
-        border-bottom: 3px solid white;
-      }
-    }
-  }
 `
 
 export default GSAP()(Blog)

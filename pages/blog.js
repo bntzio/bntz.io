@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-unfetch'
 import Layout from '../components/layout/'
 import Blog from '../components/Blog'
-import { getPostPaths } from '../utils/content'
+import { getPaths } from '../utils/content'
 
 const blog = ({ posts }) => (
   <Layout>
@@ -11,7 +11,7 @@ const blog = ({ posts }) => (
 
 blog.getInitialProps = async ({ req }) => {
   const baseUrl = process.env.NODE_ENV === 'production' ? 'https://bntz.io' : 'http://localhost:3000'
-  const paths = await getPostPaths()
+  const paths = await getPaths('posts')
   let posts = []
 
   for (let path of paths) {
