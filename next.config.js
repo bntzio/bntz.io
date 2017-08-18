@@ -15,7 +15,11 @@ module.exports = {
         exclude: /node_modules/,
         include: [
           path.resolve(__dirname, './pages'),
-          path.resolve(__dirname, './components')
+          path.resolve(__dirname, './components'),
+          path.resolve(__dirname, './utils'),
+          path.resolve(__dirname, './store'),
+          path.resolve(__dirname, './reducers'),
+          path.resolve(__dirname, './actions')
         ]
       })
     }
