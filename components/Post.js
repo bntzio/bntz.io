@@ -2,9 +2,9 @@ import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 import GSAP from 'react-gsap-enhancer'
-import { TimelineMax, Power0, Back } from 'gsap'
 import BackButton from '../components/common/BackButton'
 import { rem, media } from '../utils/styleUtils'
+import { arrowAnimation, contentAnimation } from '../utils/animations'
 
 class Post extends React.Component {
   componentDidMount () {
@@ -13,8 +13,8 @@ class Post extends React.Component {
     body.style.backgroundColor = 'white'
     $('p').selectionSharer()
 
-    const anim1 = this.addAnimation(this.contentAnimation)
-    const anim2 = this.addAnimation(this.arrowAnimation)
+    const anim1 = this.addAnimation(contentAnimation)
+    const anim2 = this.addAnimation(arrowAnimation)
     anim1.eventCallback('onStart', () => {
       anim2.pause()
     })
@@ -23,45 +23,26 @@ class Post extends React.Component {
     })
     anim1.play()
   }
-  contentAnimation () {
-    const content = document.getElementById('content')
-    return new TimelineMax().from(content, 0.3, {
-      y: 50,
-      autoAlpha: 0,
-      ease: Power0.easeIn
-    })
-  }
-  arrowAnimation () {
-    const el = document.getElementById('arrow')
-    return new TimelineMax().fromTo(el, 0.6, {
-      x: 50,
-      autoAlpha: 0
-    }, {
-      x: 0,
-      autoAlpha: 1,
-      ease: Back.easeInOut.config(2)
-    })
-  }
   render () {
     const { title, body } = this.props
 
     return (
-      <Container>
-        <MiniNav>
+      <PostContainer>
+        <PostNav>
           <Link href="/blog">
             <a><BackButton black /></a>
           </Link>
-        </MiniNav>
+        </PostNav>
         <div id="content">
           <Title>{title}</Title>
           <Body dangerouslySetInnerHTML={{ __html: body }}></Body>
         </div>
-      </Container>
+      </PostContainer>
     )
   }
 }
 
-const Container = styled.section`
+const PostContainer = styled.section`
   margin: 0 2.5%;
   color: rgba(0, 0, 0, 0.8);
 
@@ -78,7 +59,7 @@ const Container = styled.section`
   `}
 `
 
-const MiniNav = styled.nav`
+const PostNav = styled.nav`
   position: absolute;
   top: 33px;
   left: 33px;

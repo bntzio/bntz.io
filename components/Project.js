@@ -2,14 +2,14 @@ import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 import GSAP from 'react-gsap-enhancer'
-import { TimelineMax, Power0, Back } from 'gsap'
 import { rem, media } from '../utils/styleUtils'
+import { arrowAnimation, titleAnimation, framesAnimation } from '../utils/animations'
 
 class Project extends React.Component {
   componentDidMount () {
-    const anim1 = this.addAnimation(this.framesAnimation)
-    const anim2 = this.addAnimation(this.arrowAnimation)
-    const anim3 = this.addAnimation(this.titleAnimation)
+    const anim1 = this.addAnimation(framesAnimation)
+    const anim2 = this.addAnimation(arrowAnimation)
+    const anim3 = this.addAnimation(titleAnimation)
     anim1.eventCallback('onStart', () => {
       anim2.pause()
       anim3.play()
@@ -18,34 +18,6 @@ class Project extends React.Component {
       anim2.restart()
     })
     anim1.play()
-  }
-  arrowAnimation () {
-    const el = document.getElementById('arrow')
-    return new TimelineMax().fromTo(el, 0.6, {
-      x: 50,
-      autoAlpha: 0
-    }, {
-      x: 0,
-      autoAlpha: 1,
-      ease: Back.easeInOut.config(2)
-    })
-  }
-  framesAnimation () {
-    const projects = document.getElementsByClassName('project')
-    const arrow = document.getElementById('arrow')
-    return new TimelineMax().set(arrow, { autoAlpha: 0 }).staggerFromTo(projects, 0.3, {
-      autoAlpha: 0,
-      ease: Power0.easeNone
-    }, { autoAlpha: 1, ease: Power0.easeNone }, 0.1)
-  }
-  titleAnimation () {
-    const title = document.getElementById('title')
-    return new TimelineMax().fromTo(title, 0.5, {
-      autoAlpha: 0
-    }, {
-      autoAlpha: 1,
-      ease: Power0.easeNone
-    })
   }
   transformFrame (el) {
     if (window.innerWidth > 768) {

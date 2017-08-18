@@ -1,20 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
 import GSAP from 'react-gsap-enhancer'
-import { TimelineMax, Power0, Back } from 'gsap'
 import uuid from 'uuid/v4'
 import BackButton from './common/BackButton'
+import Container from './common/Container'
 import { Link } from '../routes'
 import { rem, media } from '../utils/styleUtils'
+import { arrowAnimation, titleAnimation, postsAnimation } from '../utils/animations'
 
 class Blog extends React.Component {
   componentDidMount () {
     const body = document.querySelector('body')
     body.style.backgroundColor = 'blue'
 
-    const anim1 = this.addAnimation(this.postsAnimation)
-    const anim2 = this.addAnimation(this.arrowAnimation)
-    const anim3 = this.addAnimation(this.titleAnimation)
+    const anim1 = this.addAnimation(postsAnimation)
+    const anim2 = this.addAnimation(arrowAnimation)
+    const anim3 = this.addAnimation(titleAnimation)
     anim1.eventCallback('onStart', () => {
       anim2.pause()
       anim3.play()
@@ -23,34 +24,6 @@ class Blog extends React.Component {
       anim2.restart()
     })
     anim1.play()
-  }
-  arrowAnimation () {
-    const el = document.getElementById('arrow')
-    return new TimelineMax().fromTo(el, 0.6, {
-      x: 50,
-      autoAlpha: 0
-    }, {
-      x: 0,
-      autoAlpha: 1,
-      ease: Back.easeInOut.config(2)
-    })
-  }
-  postsAnimation () {
-    const posts = document.getElementsByClassName('post')
-    return new TimelineMax().staggerFrom(posts, 0.3, {
-      y: 50,
-      autoAlpha: 0,
-      ease: Power0.easeNone
-    }, 0.2)
-  }
-  titleAnimation () {
-    const title = document.getElementById('title')
-    return new TimelineMax().fromTo(title, 0.5, {
-      autoAlpha: 0
-    }, {
-      autoAlpha: 1,
-      ease: Power0.easeNone
-    })
   }
   renderPosts () {
     const { posts } = this.props
@@ -69,25 +42,19 @@ class Blog extends React.Component {
   render () {
     return (
       <Container>
-        <MiniNav>
+        <BlogNav>
           <Link route="index">
             <a><BackButton /></a>
           </Link>
           <Title id="title">Articles</Title>
-        </MiniNav>
+        </BlogNav>
         {this.renderPosts()}
       </Container>
     )
   }
 }
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-`
-
-const MiniNav = styled.nav`
+const BlogNav = styled.nav`
   display: flex;
   align-items: center;
 `
