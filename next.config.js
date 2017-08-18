@@ -1,5 +1,4 @@
 const path = require('path')
-const DashboardPlugin = require('webpack-dashboard/plugin')
 
 module.exports = {
   webpack: (config, { dev }) => {
@@ -19,8 +18,6 @@ module.exports = {
           path.resolve(__dirname, './components')
         ]
       })
-
-      config.plugins.push(new DashboardPlugin())
     }
 
     return config
