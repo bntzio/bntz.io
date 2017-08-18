@@ -34,6 +34,16 @@ export const contentAnimation = () => {
   })
 }
 
+// journal entries animation
+export const entriesAnimation = () => {
+  const entries = document.getElementsByClassName('entry')
+  return new TimelineMax().staggerFrom(entries, 0.3, {
+    y: 50,
+    autoAlpha: 0,
+    ease: Power0.easeNone
+  }, 0.2)
+}
+
 // posts animation
 export const postsAnimation = () => {
   const posts = document.getElementsByClassName('post')

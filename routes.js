@@ -3,3 +3,4 @@ const routes = module.exports = nextRoutes()
 
 routes.add('index', '/')
 routes.add('post', '/blog/:slug')
+routes.add('entry', '/journal/:slug')

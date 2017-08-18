@@ -1,3 +1,4 @@
+import fetch from 'isomorphic-unfetch'
 import Post from '../components/Post'
 import Layout from '../components/layout/'
 import { getSlugsAndPaths } from '../utils/content'
