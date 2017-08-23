@@ -1,5 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import Link from 'next/link'
 import { TweenMax, Power0 } from 'gsap'
 import GSAP from 'react-gsap-enhancer'
@@ -285,4 +284,4 @@ const StyledLink = styled.a`
   }
 `
 
-export default connect()(GSAP()(Home))
+export default GSAP()(Home)
