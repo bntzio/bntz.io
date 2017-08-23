@@ -5,6 +5,8 @@ import { rem, media } from './../utils/styleUtils'
 
 export default class Doc extends Document {
   render () {
+    // metas
+    const viewport = <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     // styles
     const sheet = new ServerStyleSheet()
     const main = sheet.collectStyles(<Main />)
@@ -22,6 +24,7 @@ export default class Doc extends Document {
         <Head>
           <title>Enrique Benitez - Digital Maker</title>
           {normalize}
+          {viewport}
           {globalStyles}
           {styleTags}
           {selectionSharerStyles}

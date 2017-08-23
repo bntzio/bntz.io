@@ -218,7 +218,8 @@ const HiddenLogo = styled.h1`
 `
 
 const Content = styled.div`
-  ${rem('margin-top', 32)};
+  ${rem('margin-top', 24)};
+  ${rem('margin-bottom', 32)};
   position: relative;
   display: flex;
   width: 100%;
@@ -270,7 +271,7 @@ const StyledLink = styled.a`
   h3 {
     ${polyRem('padding', 8, 32)};
     ${polyRem('margin', 32, 0)};
-    ${rem('font-size', 64)};
+    ${rem('font-size', 48)};
     font-family: 'Frutiger LT W01_88 X Blk Cn It';
     color: white;
     font-style: italic;
@@ -278,6 +279,7 @@ const StyledLink = styled.a`
     text-align: center;
 
     ${media.largeDesktop`
+      ${rem('font-size', 64)};
       padding-top: 0;
       padding-bottom: 0;
       margin-top: 0;

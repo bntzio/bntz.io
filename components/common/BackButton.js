@@ -13,6 +13,7 @@ const Container = styled.div`
   display: inline-flex;
   ${rem('padding-top', 24)};
   ${rem('padding-bottom', 24)};
+  ${rem('padding-right', 16)};
 
   ${media.desktop`
     ${rem('padding-left', 24)};

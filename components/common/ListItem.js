@@ -21,6 +21,8 @@ const Item = styled.div`
     ${rem('margin-left', 33)};
     ${rem('margin-right', 33)};
     ${rem('margin-bottom', -16)};
+
+
   `}
 
   h2 {
@@ -31,12 +33,14 @@ const Item = styled.div`
       color: white;
       text-decoration: none;
 
-      &:hover {
-        cursor: default;
-        border-bottom: 3px solid white;
-      }
+      ${media.desktop`
+        &:hover {
+          cursor: default;
+          border-bottom: 3px solid white;
+        }
+      `}
     }
-}
+  }
 `
 
 export default ListItem
