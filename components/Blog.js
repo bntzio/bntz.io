@@ -11,7 +11,7 @@ import { arrowAnimation, titleAnimation, postsAnimation } from '../utils/animati
 class Blog extends React.Component {
   componentDidMount () {
     const body = document.querySelector('body')
-    body.style.backgroundColor = 'blue'
+    body.style.backgroundColor = '#222222'
 
     const anim1 = this.addAnimation(postsAnimation)
     const anim2 = this.addAnimation(arrowAnimation)

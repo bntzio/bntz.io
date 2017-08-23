@@ -1,5 +1,5 @@
 import Layout from '../components/layout/'
-import Courses from '../components/Experiments'
+import Courses from '../components/Courses'
 
 const courses = () => (
   <Layout>

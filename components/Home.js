@@ -17,57 +17,46 @@ class Home extends React.Component {
     this.changeBackground = this.changeBackground.bind(this)
   }
   changeBackground (el) {
-    const body = document.querySelector('body')
     const line1 = document.getElementById('line1')
     const line2 = document.getElementById('line2')
     switch (el) {
       case 'work':
-        body.style.backgroundColor = 'red'
         line1.innerHTML = 'work work'
         line2.innerHTML = 'more work'
         break
       case 'blog':
-        body.style.backgroundColor = 'blue'
         line1.innerHTML = 'my essays'
         line2.innerHTML = 'and stuff'
         break
       case 'more':
-        body.style.backgroundColor = 'orange'
         line1.innerHTML = `${this.state.moreMsg1}`
         line2.innerHTML = `${this.state.moreMsg2}`
         break
       case 'experiments':
-        body.style.backgroundColor = '#ff3b6b'
         line1.innerHTML = 'my crazy'
         line2.innerHTML = 'ideas'
         break
       case 'journal':
-        body.style.backgroundColor = '#89e051'
         line1.innerHTML = 'writing'
         line2.innerHTML = 'down'
         break
       case 'now':
-        body.style.backgroundColor = '#ff4742'
         line1.innerHTML = 'what im'
         line2.innerHTML = 'doing now'
         break
       case 'newsletter':
-        body.style.backgroundColor = '#9000f0'
         line1.innerHTML = 'wanna'
         line2.innerHTML = 'join?'
         break
       case 'life':
-        body.style.backgroundColor = '#ff00bf'
         line1.innerHTML = 'life'
         line2.innerHTML = 'logging'
         break
       case 'courses':
-        body.style.backgroundColor = '#e01563'
         line1.innerHTML = 'future'
         line2.innerHTML = 'makers'
         break
       default:
-        body.style.backgroundColor = '#222'
         line1.innerHTML = 'Digital'
         line2.innerHTML = 'Maker'
         return

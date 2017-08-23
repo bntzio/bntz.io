@@ -8,7 +8,7 @@ import { arrowAnimation, titleAnimation, entriesAnimation } from '../utils/anima
 class Journal extends React.Component {
   componentDidMount () {
     const body = document.querySelector('body')
-    body.style.backgroundColor = '#89e051'
+    body.style.backgroundColor = '#222222'
 
     const anim1 = this.addAnimation(entriesAnimation)
     const anim2 = this.addAnimation(arrowAnimation)
