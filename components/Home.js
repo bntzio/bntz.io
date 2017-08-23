@@ -147,7 +147,7 @@ class Home extends React.Component {
           </Poster>
           <Menu id="menu">
             <Item onClick={() => dispatch(actions.setBackground('work'))}>
-              <Link href="/work"><StyledLink><h3 onMouseOver={() => this.changeBackground('work')} onMouseLeave={this.changeBackground}>work</h3></StyledLink></Link>
+              <Link href="/projects"><StyledLink><h3 onMouseOver={() => this.changeBackground('work')} onMouseLeave={this.changeBackground}>work</h3></StyledLink></Link>
             </Item>
             <Item>
               <Link href="/blog"><StyledLink><h3 onMouseOver={() => this.changeBackground('blog')} onMouseLeave={this.changeBackground}>blog</h3></StyledLink></Link>
