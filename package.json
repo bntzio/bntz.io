@@ -23,7 +23,7 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "NODE_ENV=production next start",
-    "now": "npm run build && now && now alias"
+    "prod": "npm run build && npm run processmd && now && now alias"
   },
   "dependencies": {
     "express": "^4.15.4",
