@@ -5,8 +5,6 @@ import GSAP from 'react-gsap-enhancer'
 import styled from 'styled-components'
 import { polyRem, rem, media } from '../utils/styleUtils'
 
-const actions = require('./../actions/actions')
-
 class Home extends React.Component {
   constructor (props) {
     super(props)
@@ -137,8 +135,6 @@ class Home extends React.Component {
   }
 
   render () {
-    const { dispatch } = this.props
-
     return (
       <HomeContainer>
         <Logo />
@@ -149,7 +145,7 @@ class Home extends React.Component {
             <Word id="line2">Maker</Word>
           </Poster>
           <Menu id="menu">
-            <Item onClick={() => dispatch(actions.setBackground('work'))}>
+            <Item>
               <Link href="/projects"><StyledLink><h3 onMouseOver={() => this.changeBackground('work')} onMouseLeave={this.changeBackground}>work</h3></StyledLink></Link>
             </Item>
             <Item>
