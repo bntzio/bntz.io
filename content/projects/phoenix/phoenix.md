@@ -1,7 +1,10 @@
 ---
-name: Phoenix
-description: Send a last message to the people you love when you die
 title: Phoenix
+description: Send a last message to the people you love when you die
+heroColor: "#524b9a"
+titleColor: "#ffffff"
+website: null
+github: null
 slug: phoenix
 ---
 

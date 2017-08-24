@@ -1,7 +1,10 @@
 ---
-name: Rejection Challenges
-description: Achieve your true potential by overcoming fear of rejection
 title: Rejection Challenges
+description: Achieve your true potential by overcoming fear of rejection
+heroColor: "#D7F700"
+titleColor: "#000000"
+website: "http://rejectionchalleng.es"
+github: null
 slug: rejection-challenges
 ---
 

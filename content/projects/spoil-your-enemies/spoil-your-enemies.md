@@ -1,7 +1,10 @@
 ---
-name: Spoil Your Enemies
-description: Send Anonymous TV Show Spoilers via SMS
 title: Spoil Your Enemies
+description: Send Anonymous TV Show Spoilers via SMS
+heroColor: "#fa709a"
+titleColor: "#ffffff"
+website: "https://spoilyourenemies.xyz"
+github: null
 slug: spoil-your-enemies
 ---
 

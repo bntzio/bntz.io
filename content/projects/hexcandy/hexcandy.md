@@ -1,7 +1,10 @@
 ---
-name: HexCandy
-description: Delicious color tracker for designers
 title: HexCandy
+description: Delicious color tracker for designers
+heroColor: "#ef3e4a"
+titleColor: "#ffffff"
+website: "http://hexcandy.com"
+github: null
 slug: hexcandy
 ---
 

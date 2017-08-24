@@ -10,7 +10,7 @@ const h = {
   },
   renderFrames (projects, type) {
     return projects.map(frame => {
-      return <WorkFrame key={uuid()} name={frame.name} classname={type} description={frame.description} route={type} slug={frame.slug} />
+      return <WorkFrame key={uuid()} title={frame.title} classname={type} description={frame.description} route={type} slug={frame.slug} />
     })
   }
 }

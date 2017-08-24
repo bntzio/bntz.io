@@ -1,7 +1,10 @@
 ---
-name: Wipe Modules
-description: A little agent that removes the node_modules folder of non-active projects
 title: Wipe Modules
+description: A little agent that removes the node_modules folder of non-active projects
+heroColor: "#89E051"
+titleColor: "#ffffff"
+website: null
+github: "https://github.com/bntzio/wipe-modules"
 slug: wipe-modules
 ---
 

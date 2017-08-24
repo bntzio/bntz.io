@@ -24,6 +24,9 @@ const Container = styled.div`
 const Arrow = styled.div`
   cursor: pointer;
   background-image: ${props => props.black ? "url('/static/assets/icons/arrow-black-left.svg')" : "url('/static/assets/icons/arrow-white-left.svg')"};
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
   ${rem('width', 22)};
   ${rem('height', 22)};
 `

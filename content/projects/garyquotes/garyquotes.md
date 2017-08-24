@@ -1,7 +1,10 @@
 ---
-name: GaryQuotes
-description: Super awesome wallpapers starring the best Gary Vaynerchuk quotes
 title: GaryQuotes
+description: Super awesome wallpapers starring the best Gary Vaynerchuk quotes
+heroColor: "#F44336"
+titleColor: "#ffffff"
+website: null
+github: null
 slug: garyquotes
 ---
 

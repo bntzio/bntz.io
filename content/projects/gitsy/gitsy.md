@@ -1,7 +1,10 @@
 ---
-name: Gitsy
-description: Organize your GitHub stars like a true stargazer
 title: Gitsy
+description: Organize your GitHub stars like a true stargazer
+heroColor: "#EE327D"
+titleColor: "#ffffff"
+website: null
+github: null
 slug: gitsy
 ---
 

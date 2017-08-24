@@ -44,12 +44,12 @@ class WorkFrame extends React.Component {
     }
   }
   render () {
-    const { name, description, classname, route, slug } = this.props
+    const { title, description, classname, route, slug } = this.props
 
     return (
       <Link route={route} params={{ slug }}>
         <Frame onMouseMove={this.transformFrame} onMouseLeave={this.resetTransform} className={classname}>
-          {name}
+          {title}
           <br/><br/>
           {description}
         </Frame>
