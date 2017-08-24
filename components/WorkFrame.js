@@ -44,11 +44,11 @@ class WorkFrame extends React.Component {
     }
   }
   render () {
-    const { title, description, classname, route, slug } = this.props
+    const { title, description, classname, route, slug, borderColor } = this.props
 
     return (
       <Link route={route} params={{ slug }}>
-        <Frame onMouseMove={this.transformFrame} onMouseLeave={this.resetTransform} className={classname}>
+        <Frame onMouseMove={this.transformFrame} onMouseLeave={this.resetTransform} className={classname} borderColor={borderColor}>
           {title}
           <br/><br/>
           {description}
@@ -73,6 +73,10 @@ const Frame = styled.div`
   padding: 1rem;
   cursor: crosshair;
   font-family: 'Proxima N W01 Smbd';
+
+  &:hover {
+    border-color: ${props => props.borderColor};
+  }
 
   ${media.desktop`
     flex: 0 0 28%;
