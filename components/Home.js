@@ -55,6 +55,10 @@ class Home extends React.Component {
         line1.innerHTML = 'future'
         line2.innerHTML = 'makers'
         break
+      case 'about':
+        line1.innerHTML = 'get to'
+        line2.innerHTML = 'know me'
+        break
       default:
         line1.innerHTML = 'Digital'
         line2.innerHTML = 'Maker'
@@ -158,23 +162,26 @@ class Home extends React.Component {
                 </h3>
               </StyledLink>
             </Item>
-            <Item className="links">
+            {/* <Item className="links">
               <Link href="/experiments"><StyledLink><h3 onMouseOver={() => this.changeBackground('experiments')} onMouseLeave={this.changeBackground}>Experiments</h3></StyledLink></Link>
-            </Item>
+            </Item> */}
             <Item className="links">
               <Link href="/journal"><StyledLink><h3 onMouseOver={() => this.changeBackground('journal')} onMouseLeave={this.changeBackground}>Journal</h3></StyledLink></Link>
             </Item>
             <Item className="links">
               <Link href="/now"><StyledLink><h3 onMouseOver={() => this.changeBackground('now')} onMouseLeave={this.changeBackground}>Now</h3></StyledLink></Link>
             </Item>
-            <Item className="links">
+            {/* <Item className="links">
               <Link href="/life"><StyledLink><h3 onMouseOver={() => this.changeBackground('life')} onMouseLeave={this.changeBackground}>Life</h3></StyledLink></Link>
-            </Item>
+            </Item> */}
             <Item className="links">
               <Link href="/newsletter"><StyledLink><h3 onMouseOver={() => this.changeBackground('newsletter')} onMouseLeave={this.changeBackground}>Newsletter</h3></StyledLink></Link>
             </Item>
-            <Item className="links">
+            {/* <Item className="links">
               <Link href="/courses"><StyledLink><h3 onMouseOver={() => this.changeBackground('courses')} onMouseLeave={this.changeBackground}>Courses</h3></StyledLink></Link>
+            </Item> */}
+            <Item className="links">
+              <Link href="/about"><StyledLink><h3 onMouseOver={() => this.changeBackground('about')} onMouseLeave={this.changeBackground}>About</h3></StyledLink></Link>
             </Item>
           </Menu>
         </Content>
