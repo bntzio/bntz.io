@@ -27,6 +27,7 @@ class Now extends React.Component {
   }
   render () {
     const { nows } = this.props
+    const title = 'What I\'ve been into'
 
     return (
       <Container>
@@ -34,7 +35,7 @@ class Now extends React.Component {
           <Link route="index">
             <a><BackButton /></a>
           </Link>
-          <Title id="title">What I've been into</Title>
+          <Title id="title">{title}</Title>
         </NowNav>
         {h.renderNows(nows, 'period')}
       </Container>
