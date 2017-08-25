@@ -55,6 +55,16 @@ export const postsAnimation = () => {
   }, 0.2)
 }
 
+// now periods animation (entries)
+export const periodsAnimation = () => {
+  const periods = document.getElementsByClassName('period')
+  return new TimelineMax().staggerFrom(periods, 0.3, {
+    y: 50,
+    autoAlpha: 0,
+    ease: Power0.easeNone
+  }, 0.2)
+}
+
 // project frames animation
 export const framesAnimation = () => {
   const projects = document.getElementsByClassName('project')

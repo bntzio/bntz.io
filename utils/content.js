@@ -25,3 +25,15 @@ export function getSlugsAndPaths () {
 
   return arr
 }
+
+// get the last period (now) eg: 4, 2, 32, 7, 46 to build the url -> /now/46
+export function getLastPeriod () {
+  const nowPaths = getPaths('nows')
+  let numbers = []
+  nowPaths.map(nowPath => {
+    const number = nowPath.replace(/\D+/g, '') // regex to get the numbers from a string
+    numbers.push(parseInt(number))
+  })
+
+  return Math.max(...numbers)
+}

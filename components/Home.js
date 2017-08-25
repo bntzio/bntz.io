@@ -1,9 +1,11 @@
 import React from 'react'
 import Link from 'next/link'
+import { Link as RouteLink } from '../routes'
 import { TweenMax, Power0 } from 'gsap'
 import GSAP from 'react-gsap-enhancer'
 import styled from 'styled-components'
 import { polyRem, rem, media } from '../utils/styleUtils'
+import { getLastPeriod } from '../utils/content'
 
 class Home extends React.Component {
   constructor (props) {
@@ -12,6 +14,10 @@ class Home extends React.Component {
     this.state = { more: false, moreMsg1: 'want more?', moreMsg2: 'really?' }
     this.showMoreLinks = this.showMoreLinks.bind(this)
     this.changeBackground = this.changeBackground.bind(this)
+  }
+  componentDidMount () {
+    const body = document.querySelector('body')
+    body.style.backgroundColor = '#222222'
   }
   changeBackground (el) {
     const line1 = document.getElementById('line1')
@@ -135,6 +141,8 @@ class Home extends React.Component {
   }
 
   render () {
+    const lastPeriod = getLastPeriod()
+
     return (
       <HomeContainer>
         <Logo />
@@ -165,7 +173,7 @@ class Home extends React.Component {
               <Link href="/journal"><StyledLink><h3 onMouseOver={() => this.changeBackground('journal')} onMouseLeave={this.changeBackground}>Journal</h3></StyledLink></Link>
             </Item>
             <Item className="links">
-              <Link href="/now"><StyledLink><h3 onMouseOver={() => this.changeBackground('now')} onMouseLeave={this.changeBackground}>Now</h3></StyledLink></Link>
+              <RouteLink route="period" params={{ slug: lastPeriod }}><StyledLink><h3 onMouseOver={() => this.changeBackground('now')} onMouseLeave={this.changeBackground}>Now</h3></StyledLink></RouteLink>
             </Item>
             {/* <Item className="links">
               <Link href="/life"><StyledLink><h3 onMouseOver={() => this.changeBackground('life')} onMouseLeave={this.changeBackground}>Life</h3></StyledLink></Link>
