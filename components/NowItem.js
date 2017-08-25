@@ -27,6 +27,7 @@ const Item = styled.div`
 
   h2 {
     font-family: 'Proxima N W01 Smbd';
+    text-rendering: optimizeLegibility;
     font-size: 20px;
 
     a {

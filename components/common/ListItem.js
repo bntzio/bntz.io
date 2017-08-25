@@ -28,6 +28,7 @@ const Item = styled.div`
   h2 {
     font-family: 'Proxima N W01 Smbd';
     font-size: 20px;
+    text-rendering: optimizeLegibility;
 
     a {
       color: white;

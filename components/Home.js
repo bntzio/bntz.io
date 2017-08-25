@@ -244,6 +244,7 @@ const Word = styled.h2`
   text-transform: uppercase;
   margin: 0;
   font-family: 'Frutiger LT W01_88 X Blk Cn It';
+  text-rendering: optimizeLegibility;
   ${rem('font-size', 160)};
 `
 
@@ -276,6 +277,7 @@ const StyledLink = styled.a`
     font-style: italic;
     text-transform: uppercase;
     text-align: center;
+    text-rendering: optimizeLegibility;
 
     ${media.largeDesktop`
       ${rem('font-size', 64)};

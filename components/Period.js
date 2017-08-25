@@ -65,6 +65,7 @@ const PeriodNav = styled.nav`
 
 const Title = styled.h2`
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  text-rendering: optimizeLegibility;
   ${rem('font-size', 22)};
   ${rem('margin-top', 100)};
 
@@ -79,6 +80,7 @@ const Title = styled.h2`
 
 const Body = styled.div`
  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+ text-rendering: optimizeLegibility;
  line-height: 28px;
  word-spacing: 1px;
  ${rem('font-size', 16)};

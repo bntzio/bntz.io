@@ -49,6 +49,7 @@ const BlogNav = styled.nav`
 
 const Title = styled.h4`
   font-family: 'Proxima N W01 Bold';
+  text-rendering: optimizeLegibility;
   ${rem('font-size', 20)};
 `
 
