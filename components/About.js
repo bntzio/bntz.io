@@ -1,14 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
 import GSAP from 'react-gsap-enhancer'
+import md from 'react-markings'
 import SimpleContainer from './common/SimpleContainer'
+import MarkdownWrapper from './common/MarkdownWrapper'
 import SimpleNav from './common/SimpleNav'
-import SimpleTitle from './common/SimpleTitle'
-import SimpleBody from './common/SimpleBody'
 import BackButton from '../components/common/BackButton'
 import { arrowAnimation, contentAnimation } from '../utils/animations'
 
-class Period extends React.Component {
+class About extends React.Component {
   componentDidMount () {
     const body = document.querySelector('body')
     body.style.backgroundColor = 'white'
@@ -24,12 +24,6 @@ class Period extends React.Component {
     anim1.play()
   }
   render () {
-    const { title, body } = this.props
-    const colors = {
-      color: 'rgba(0, 0, 0, 0.8)',
-      highlightColor: '#79FFE1'
-    }
-
     return (
       <SimpleContainer>
         <SimpleNav>
@@ -38,12 +32,20 @@ class Period extends React.Component {
           </Link>
         </SimpleNav>
         <div id="content">
-          <SimpleTitle title={title} color={colors.color} highlightColor={colors.highlightColor} />
-          <SimpleBody body={body} color={colors.color} highlightColor={colors.highlightColor} />
+          <MarkdownWrapper color="rgba(0, 0, 0, 0.8)" highlightColor="#ff3b6b" selectionColor="#ffffff">
+            {
+              md`
+                # Hi there 👋
+                ### I'm a self-taught full-stack developer and maker 👨‍💻
+
+                My name is Enrique, and I'm a full-stack developer focusing on building great looking apps.
+              `
+            }
+          </MarkdownWrapper>
         </div>
       </SimpleContainer>
     )
   }
 }
 
-export default GSAP()(Period)
+export default GSAP()(About)
