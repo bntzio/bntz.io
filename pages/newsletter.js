@@ -1,10 +1,7 @@
-import Layout from '../components/layout/'
 import Newsletter from '../components/Newsletter'
 
 const newsletter = () => (
-  <Layout>
-    <Newsletter />
-  </Layout>
+  <Newsletter />
 )
 
 export default newsletter

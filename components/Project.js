@@ -3,6 +3,8 @@ import Link from 'next/link'
 import styled from 'styled-components'
 import GSAP from 'react-gsap-enhancer'
 import BackButton from '../components/common/BackButton'
+import Container from './common/Container'
+import Hero from './common/Hero'
 import { darken } from 'polished'
 import { rem, media } from '../utils/styleUtils'
 import { arrowAnimation, contentAnimation, heroAnimation, mobileNavAnimation } from '../utils/animations'
@@ -71,7 +73,7 @@ class Project extends React.Component {
     }
 
     return (
-      <ProjectContainer fluid>
+      <Container>
         <Link href="/projects">
           <MobileProjectNav background={heroColor} color={titleColor} id="mobileNav">
             <a>👈</a>
@@ -88,40 +90,20 @@ class Project extends React.Component {
             </a>
           </Link>
         </ProjectNav>
-        <ProjectHero id="hero" background={heroColor} color={titleColor}>
-          <ProjectHeroContent>
-            <Title>{title}</Title>
-            <Description>{description}</Description>
-            <IconsContainer>
-              {this.renderIcons(website, github, titleColor)}
-            </IconsContainer>
-          </ProjectHeroContent>
-        </ProjectHero>
+        <Hero animated background={heroColor} color={titleColor}>
+          <Title>{title}</Title>
+          <Description>{description}</Description>
+          <IconsContainer>
+            {this.renderIcons(website, github, titleColor)}
+          </IconsContainer>
+        </Hero>
         <div id="content">
           <Body dangerouslySetInnerHTML={{ __html: body }}></Body>
         </div>
-      </ProjectContainer>
+      </Container>
     )
   }
 }
-
-const ProjectContainer = styled.section`
-  ${props => props.fluid ? 'margin: 0' : 'margin: 0 2.5%'};
-  background-color: ${props => props.color};
-  color: rgba(0, 0, 0, 0.8);
-
-  ${media.tablet`
-    ${props => props.fluid ? 'margin: 0' : 'margin: 0 5%'};
-  `}
-
-  ${media.desktop`
-    margin: ${props => props.fluid ? 'margin: 0' : 'margin: 0 15%'};
-  `}
-
-  ${media.largeDesktop`
-    margin: ${props => props.fluid ? 'margin: 0' : 'margin: 0 20%'};
-  `}
-`
 
 const MobileProjectNav = styled.nav`
   cursor: pointer;
@@ -150,27 +132,6 @@ const ProjectNav = styled.nav`
   `}
 `
 
-const ProjectHero = styled.div`
-  width: 100%;
-  height: 48vh;
-  padding: 0 50px;
-  box-sizing: border-box;
-  text-align: center;
-  color: ${props => props.color};
-  display: flex;
-  justify-content: center;
-  background-color: ${props => props.background};
-  position: relative;
-  opacity: 0;
-`
-
-const ProjectHeroContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-self: center;
-`
-
 const Title = styled.h2`
   font-family: 'Proxima Nova W01 Medium';
   text-rendering: optimizeLegibility;
@@ -186,7 +147,7 @@ const Title = styled.h2`
 `
 
 const Description = styled.h3`
-  font-family:'Proxima N W01 Reg';
+  font-family: 'Proxima N W01 Reg';
   text-rendering: optimizeLegibility;
   ${rem('font-size', 16)};
 
@@ -231,7 +192,7 @@ const Github = styled.div`
 `
 
 const Body = styled.div`
-  font-family:'Proxima N W01 Thin Reg';
+  font-family: 'Proxima N W01 Thin Reg';
   text-rendering: optimizeLegibility;
   ${rem('font-size', 20)};
   color: #555;
