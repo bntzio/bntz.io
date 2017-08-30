@@ -2,7 +2,7 @@
   "name": "bntz",
   "main": "server.js",
   "now": {
-    "alias": "bntz.io",
+    "alias": "https://bntz.io",
     "files": [
       "actions",
       "components",

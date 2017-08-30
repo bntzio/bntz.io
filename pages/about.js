@@ -1,12 +1,15 @@
+import React from 'react'
 import About from '../components/About'
 import Layout from '../components/layout/'
 
-const about = () => {
-  return (
-    <Layout>
-      <About />
-    </Layout>
-  )
+class about extends React.Component {
+  render () {
+    return (
+      <Layout>
+        <About />
+      </Layout>
+    )
+  }
 }
 
 export default about

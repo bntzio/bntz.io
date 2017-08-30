@@ -23,6 +23,14 @@ class About extends React.Component {
     })
     anim1.play()
   }
+  renderMarkdown () {
+    return md`
+      # Hi there 👋
+      ### I'm a self-taught full-stack developer and maker 👨‍💻
+
+      My name is Enrique, and I'm a full-stack developer focusing on building great looking apps.
+    `
+  }
   render () {
     return (
       <SimpleContainer>
@@ -33,14 +41,7 @@ class About extends React.Component {
         </SimpleNav>
         <div id="content">
           <MarkdownWrapper color="rgba(0, 0, 0, 0.8)" highlightColor="#ff3b6b" selectionColor="#ffffff">
-            {
-              md`
-                # Hi there 👋
-                ### I'm a self-taught full-stack developer and maker 👨‍💻
-
-                My name is Enrique, and I'm a full-stack developer focusing on building great looking apps.
-              `
-            }
+            {this.renderMarkdown()}
           </MarkdownWrapper>
         </div>
       </SimpleContainer>
