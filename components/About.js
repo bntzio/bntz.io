@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import GSAP from 'react-gsap-enhancer'
-import md from 'react-markings'
+import styled from 'styled-components'
 import SimpleContainer from './common/SimpleContainer'
 import MarkdownWrapper from './common/MarkdownWrapper'
 import SimpleNav from './common/SimpleNav'
@@ -33,19 +33,24 @@ class About extends React.Component {
         </SimpleNav>
         <div id="content">
           <MarkdownWrapper color="rgba(0, 0, 0, 0.8)" highlightColor="#ff3b6b" selectionColor="#ffffff">
-            {
-              md`
-                # Hi there 👋
-                ### I'm a self-taught full-stack developer and maker 👨‍💻
-
-                My name is Enrique, and I'm a full-stack developer focusing on building great looking apps.
-              `
-            }
+            <Title>Hi there 👋</Title>
+            <Subtitle>I'm a self-taught full-stack developer and maker 👨‍💻</Subtitle>
+            <Body>
+              <Paragraph>My name is Enrique, and I'm a full-stack developer focusing on building great looking apps.</Paragraph>
+            </Body>
           </MarkdownWrapper>
         </div>
       </SimpleContainer>
     )
   }
 }
+
+const Title = styled.h1``
+
+const Subtitle = styled.h3``
+
+const Body = styled.div``
+
+const Paragraph = styled.p``
 
 export default GSAP()(About)
