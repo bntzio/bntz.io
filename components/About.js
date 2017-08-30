@@ -34,9 +34,9 @@ class About extends React.Component {
         <div id="content">
           <MarkdownWrapper color="rgba(0, 0, 0, 0.8)" highlightColor="#ff3b6b" selectionColor="#ffffff">
             <Title>Hi there 👋</Title>
-            <Subtitle>I'm a self-taught full-stack developer and maker 👨‍💻</Subtitle>
+            <Subtitle>I&#39;m a self-taught full-stack developer and maker 👨‍💻</Subtitle>
             <Body>
-              <Paragraph>My name is Enrique, and I'm a full-stack developer focusing on building great looking apps.</Paragraph>
+              <Paragraph>My name is Enrique, and I&#39;m a full-stack developer focusing on building great looking apps.</Paragraph>
             </Body>
           </MarkdownWrapper>
         </div>
