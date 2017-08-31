@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { media } from '../../utils/styleUtils'
 
 const SimpleNav = ({ children }) => {
   return (
@@ -9,9 +10,11 @@ const SimpleNav = ({ children }) => {
 }
 
 const Nav = styled.nav`
-  position: absolute;
-  top: 33px;
-  left: 33px;
+  ${media.desktop`
+    position: absolute;
+    top: 33px;
+    left: 33px;
+  `}
 `
 
 export default SimpleNav
