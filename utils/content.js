@@ -1,4 +1,6 @@
 const summary = require('../content/summary.json')
+const moment = require('moment')
+const _ = require('lodash')
 
 // get posts/entries paths from the summary.sourceFileArray (blog + journal)
 export function getPaths (type) {
@@ -24,6 +26,15 @@ export function getSlugsAndPaths () {
   })
 
   return arr
+}
+
+// get the slug and date for each summary.fileMap
+export function orderPosts (posts) {
+  const sortedPosts = _.sortBy(posts, o => {
+    return new moment(o.date, 'MM/DD/YYYY').format('MM DD YYYY')
+  }).reverse()
+
+  return sortedPosts
 }
 
 // get the last period (now) eg: 4, 2, 32, 7, 46 to build the url -> /now/46

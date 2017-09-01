@@ -1,5 +1,6 @@
 ---
 title: Your perception will change as soon as you ship
+date: 11/1/2016
 slug: perception
 ---
 

@@ -3,9 +3,9 @@ import Post from '../components/Post'
 import Layout from '../components/layout/'
 import { getSlugsAndPaths } from '../utils/content'
 
-const post = ({ title, body }) => (
+const post = ({ title, body, date }) => (
   <Layout>
-    <Post title={title} body={body} />
+    <Post title={title} body={body} date={date} />
   </Layout>
 )
 
@@ -31,7 +31,7 @@ post.getInitialProps = async ({ query }) => {
   const slug = query.slug
   const post = await findBySlug(slug)
 
-  return { title: post.title, body: post.bodyHtml }
+  return { title: post.title, body: post.bodyHtml, date: post.date }
 }
 
 export default post

@@ -4,6 +4,7 @@
     "react/jsx-uses-vars": [2],
     "no-useless-return": 0,
     "no-extra-boolean-cast": 0,
+    "new-cap": 0,
   },
   "plugins": ["react"],
   "env": {

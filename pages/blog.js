@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-unfetch'
 import Layout from '../components/layout/'
 import Blog from '../components/Blog'
-import { getPaths } from '../utils/content'
+import { getPaths, orderPosts } from '../utils/content'
 
 const blog = ({ posts }) => (
   <Layout>
@@ -21,7 +21,9 @@ blog.getInitialProps = async ({ req }) => {
     posts.push(data)
   }
 
-  return { posts }
+  const orderedPosts = await orderPosts(posts)
+
+  return { posts: orderedPosts }
 }
 
 export default blog

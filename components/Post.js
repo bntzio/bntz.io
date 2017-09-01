@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
+import moment from 'moment'
 import GSAP from 'react-gsap-enhancer'
 import BackButton from '../components/common/BackButton'
 import { rem, media } from '../utils/styleUtils'
@@ -23,8 +24,12 @@ class Post extends React.Component {
     })
     anim1.play()
   }
+  renderDate (date) {
+    const formattedDate = moment(date, 'MM/DD/YYYY').format('MMM Do YYYY')
+    return `Posted on ${formattedDate}`
+  }
   render () {
-    const { title, body } = this.props
+    const { title, body, date } = this.props
 
     return (
       <PostContainer>
@@ -35,6 +40,7 @@ class Post extends React.Component {
         </PostNav>
         <div id="content">
           <Title>{title}</Title>
+          <Timestamp>{this.renderDate(date)}</Timestamp>
           <Body dangerouslySetInnerHTML={{ __html: body }}></Body>
         </div>
       </PostContainer>
@@ -74,6 +80,17 @@ const Title = styled.h2`
   ${media.desktop`
     ${rem('margin-top', 50)};
   `}
+
+  &::selection {
+    background: yellow;
+  }
+`
+
+const Timestamp = styled.time`
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-style: italic;
+  color: #777;
+  ${rem('font-size', 14)};
 
   &::selection {
     background: yellow;
