@@ -52,6 +52,7 @@ const globalStyles = injectGlobal`
     transition: background-color .6s ease;
     background-color: #222;
     color: white;
+    text-rendering: optimizeLegibility;
   }
 
   .links {

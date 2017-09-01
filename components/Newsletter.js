@@ -55,7 +55,6 @@ const ProjectNav = styled.nav`
 
 const Title = styled.h2`
   font-family: 'Frutiger LT W01_88 X Blk Cn It';
-  text-rendering: optimizeLegibility;
   ${rem('font-size', 28)};
 
   ${media.tablet`
@@ -70,7 +69,6 @@ const Subtitle = styled.h3`
   font-family: 'Proxima N W01 Bold';
   word-spacing: 4px;
   letter-spacing: .5px;
-  text-rendering: optimizeLegibility;
   ${rem('font-size', 16)};
 
   ${media.tablet`
@@ -83,7 +81,6 @@ const Subtitle = styled.h3`
 
 const Body = styled.div`
   font-family: 'Proxima N W01 Light';
-  text-rendering: optimizeLegibility;
   ${rem('font-size', 20)};
   color: #555;
   line-height: 40px;

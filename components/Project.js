@@ -134,7 +134,6 @@ const ProjectNav = styled.nav`
 
 const Title = styled.h2`
   font-family: 'Proxima Nova W01 Medium';
-  text-rendering: optimizeLegibility;
   ${rem('font-size', 26)};
 
   ${media.tablet`
@@ -148,7 +147,6 @@ const Title = styled.h2`
 
 const Description = styled.h3`
   font-family: 'Proxima N W01 Reg';
-  text-rendering: optimizeLegibility;
   ${rem('font-size', 16)};
 
   ${media.tablet`
@@ -193,7 +191,6 @@ const Github = styled.div`
 
 const Body = styled.div`
   font-family: 'Proxima N W01 Thin Reg';
-  text-rendering: optimizeLegibility;
   ${rem('font-size', 20)};
   color: #555;
   line-height: 40px;

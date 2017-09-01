@@ -7,7 +7,6 @@ const SimpleTitle = (props) => {
 
 const Title = styled.h2`
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  text-rendering: optimizeLegibility;
   color: ${props => props.color};
   ${rem('font-size', 22)};
   ${rem('margin-top', 100)};

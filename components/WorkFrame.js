@@ -73,7 +73,6 @@ const Frame = styled.div`
   padding: 1rem;
   cursor: crosshair;
   font-family: 'Proxima N W01 Smbd';
-  text-rendering: optimizeLegibility;
 
   &:hover {
     border-color: ${props => props.borderColor};

@@ -73,7 +73,6 @@ const PostNav = styled.nav`
 
 const Title = styled.h2`
   font-family: 'KievitWeb W03 Bold';
-  text-rendering: optimizeLegibility;
   ${rem('font-size', 32)};
   ${rem('margin-top', 100)};
 
@@ -99,7 +98,6 @@ const Timestamp = styled.time`
 
 const Body = styled.div`
  font-family: 'Charter ITC W01';
- text-rendering: optimizeLegibility;
  line-height: 36px;
  word-spacing: .5px;
  ${rem('font-size', 18)};

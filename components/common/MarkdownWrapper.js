@@ -11,7 +11,6 @@ const MarkdownWrapper = (props) => {
 
 const Container = styled.section`
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  text-rendering: optimizeLegibility;
   line-height: 28px;
   word-spacing: 1px;
   color: ${props => props.color};
