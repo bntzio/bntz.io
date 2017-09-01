@@ -28,7 +28,7 @@ export function getSlugsAndPaths () {
   return arr
 }
 
-// get the slug and date for each summary.fileMap
+// sort posts by descending order
 export function orderPosts (posts) {
   const sortedPosts = _.sortBy(posts, o => {
     return new moment(o.date, 'MM/DD/YYYY').format('MM DD YYYY')

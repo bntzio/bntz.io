@@ -53,6 +53,7 @@ const globalStyles = injectGlobal`
     background-color: #222;
     color: white;
   }
+
   .links {
     display: none;
 
@@ -63,5 +64,77 @@ const globalStyles = injectGlobal`
         margin-bottom: 0;
       `}
     }
+  }
+
+  /* highlight.js (ocean theme) */
+  .hljs-comment,
+  .hljs-quote {
+    color: #65737e;
+  }
+
+  /* Ocean Red */
+  .hljs-variable,
+  .hljs-template-variable,
+  .hljs-tag,
+  .hljs-name,
+  .hljs-selector-id,
+  .hljs-selector-class,
+  .hljs-regexp,
+  .hljs-deletion {
+    color: #bf616a;
+  }
+
+  /* Ocean Orange */
+  .hljs-number,
+  .hljs-built_in,
+  .hljs-builtin-name,
+  .hljs-literal,
+  .hljs-type,
+  .hljs-params,
+  .hljs-meta,
+  .hljs-link {
+    color: #d08770;
+  }
+
+  /* Ocean Yellow */
+  .hljs-attribute {
+    color: #ebcb8b;
+  }
+
+  /* Ocean Green */
+  .hljs-string,
+  .hljs-symbol,
+  .hljs-bullet,
+  .hljs-addition {
+    color: #a3be8c;
+  }
+
+  /* Ocean Blue */
+  .hljs-title,
+  .hljs-section {
+    color: #8fa1b3;
+  }
+
+  /* Ocean Purple */
+  .hljs-keyword,
+  .hljs-selector-tag {
+    color: #b48ead;
+  }
+
+  .hljs {
+    display: block;
+    overflow-x: auto;
+    background: #2b303b;
+    color: #c0c5ce;
+    padding: 0.5em;
+    font-size: 1rem;
+  }
+
+  .hljs-emphasis {
+    font-style: italic;
+  }
+
+  .hljs-strong {
+    font-weight: bold;
   }
 `

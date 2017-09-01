@@ -109,6 +109,34 @@ const Body = styled.div`
      background: yellow;
    }
  }
+
+ h1, h2, h3, h4, h5, h6 {
+   font-family: 'KievitWeb W03 Bold';
+ }
+
+ a {
+   color: rgba(0, 0, 0, 0.8);
+   background: yellow;
+   transition: .6s ease all;
+   text-decoration: none;
+ }
+
+ img {
+   display: block;
+   margin: 0 auto;
+   width: 270px;
+   height: auto;
+
+   ${media.tablet`
+     width: 360px;
+   `}
+   ${media.desktop`
+     width: 420px;
+   `}
+   ${media.largeDesktop`
+     width: 540px;
+   `}
+ }
 `
 
 export default GSAP()(Post)

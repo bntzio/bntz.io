@@ -21,8 +21,6 @@ const Item = styled.div`
     ${rem('margin-left', 33)};
     ${rem('margin-right', 33)};
     ${rem('margin-bottom', -16)};
-
-
   `}
 
   h2 {

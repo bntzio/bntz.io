@@ -9,6 +9,7 @@
 /dist
 /.next
 /static/content
+/static/assets/images/content
 /content/summary.json
 
 # misc
