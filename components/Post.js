@@ -102,7 +102,17 @@ const Body = styled.div`
  text-rendering: optimizeLegibility;
  line-height: 36px;
  word-spacing: .5px;
- font-size: 22px;
+ ${rem('font-size', 18)};
+
+ ${media.tablet`
+   ${rem('font-size', 20)};
+ `}
+ ${media.desktop`
+   ${rem('font-size', 21)};
+ `}
+ ${media.largeDesktop`
+   ${rem('font-size', 22)};
+ `}
 
  & * {
    &::selection {
