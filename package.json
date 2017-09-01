@@ -21,8 +21,9 @@
   "scripts": {
     "processjpeg": "cp content/**/**/*.jpeg static/assets/images/content/",
     "proccesspng": "cp content/**/**/*.png static/assets/images/content/",
+    "proccessgif": "cp content/**/**/*.gif static/assets/images/content/",
     "processmd": "processmd content/**/*.md --outputDir static/content --summaryOutput content/summary.json",
-    "content": "npm run processjpeg && npm run proccesspng && npm run processmd",
+    "content": "npm run processjpeg && npm run proccesspng && npm run proccessgif && npm run processmd",
     "dev": "node server.js",
     "build": "next build",
     "start": "NODE_ENV=production next start",
