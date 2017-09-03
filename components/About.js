@@ -46,8 +46,8 @@ class About extends React.Component {
               </PhotoContainer>
               <Paragraph>I currently live in Mexico. You can find me on my computer coding almost all day, every day. Building products from scratch is my passion, and I really enjoy learning and working with new emerging technologies.</Paragraph>
               <Paragraph>Apart from coding and making stuff, I like reading and writing, bodybuilding and traveling.</Paragraph>
-              <Paragraph>If you like reading too, you may find very useful <Link href="/"><a>my book reviews</a></Link>.</Paragraph>
-              <Paragraph>Other interesting links are: <Link href="/"><a>tools I use</a></Link> and <Link href="/"><a>lessons learned</a></Link>.</Paragraph>
+              <Paragraph>If you like reading too, you may find very useful <Link href="/books"><a>my book reviews</a></Link>.</Paragraph>
+              <Paragraph>Other interesting links are: <Link href="/"><a>my commonplace book</a></Link> and <Link href="/"><a>tools I use</a></Link>.</Paragraph>
               <Paragraph>You can find me on <a href="https://twitter.com/bntzio" target="_blank">Twitter</a> or <a href="https://Instagram.com/bntzio" target="_blank">Instagram</a>.</Paragraph>
               <Paragraph>Cheers 🙂</Paragraph>
             </Body>
