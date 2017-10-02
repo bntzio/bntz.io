@@ -1,5 +1,6 @@
 ---
 title: Unclutter the shit
+topic: life
 date: 11/29/2015
 slug: unclutter-the-shit
 ---

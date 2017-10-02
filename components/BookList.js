@@ -6,14 +6,14 @@ import Container from './common/Container'
 import h from '../utils/helpers'
 import { Link } from '../routes'
 import { rem } from '../utils/styleUtils'
-import { arrowAnimation, titleAnimation, postsAnimation } from '../utils/animations'
+import { arrowAnimation, titleAnimation, booksAnimation } from '../utils/animations'
 
 class BookList extends React.Component {
   componentDidMount () {
     const body = document.querySelector('body')
     body.style.backgroundColor = '#222222'
 
-    const anim1 = this.addAnimation(postsAnimation)
+    const anim1 = this.addAnimation(booksAnimation)
     const anim2 = this.addAnimation(arrowAnimation)
     const anim3 = this.addAnimation(titleAnimation)
     anim1.eventCallback('onStart', () => {

@@ -45,14 +45,25 @@ export const entriesAnimation = () => {
   }, 0.2)
 }
 
-// posts animation
-export const postsAnimation = () => {
-  const posts = document.getElementsByClassName('post')
-  return new TimelineMax().staggerFrom(posts, 0.3, {
+// books animation
+export const booksAnimation = () => {
+  const books = document.getElementsByClassName('book')
+  return new TimelineMax().staggerFrom(books, 0.3, {
     y: 50,
     autoAlpha: 0,
     ease: Power0.easeNone
   }, 0.2)
+}
+
+// posts animation
+export const postsAnimation = () => {
+  const posts = document.getElementById('blog-posts')
+  return new TimelineMax().fromTo(posts, 0.7, {
+    autoAlpha: 0
+  }, {
+    autoAlpha: 1,
+    ease: Power0.easeNone
+  })
 }
 
 // now periods animation (entries)

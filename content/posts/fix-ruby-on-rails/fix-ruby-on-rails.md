@@ -1,5 +1,6 @@
 ---
 title: How to fix Ruby on Rails in OSX El Capitan
+topic: code
 date: 10/10/2015
 slug: fix-ruby-on-rails
 ---

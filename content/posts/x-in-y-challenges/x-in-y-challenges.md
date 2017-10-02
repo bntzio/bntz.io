@@ -1,5 +1,6 @@
 ---
 title: X in Y Challenges
+topic: life
 date: 11/15/2015
 slug: x-in-y-challenges
 ---

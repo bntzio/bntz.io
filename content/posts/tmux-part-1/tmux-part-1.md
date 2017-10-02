@@ -1,5 +1,6 @@
 ---
 title: Super Productive Programming with Tmux (Part 1)
+topic: code
 date: 07/26/2016
 slug: tmux-part-1
 ---

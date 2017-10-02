@@ -1,5 +1,6 @@
 ---
 title: Fail at everything
+topic: life
 date: 03/14/2016
 slug: fail-at-everything
 ---
