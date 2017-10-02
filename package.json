@@ -20,14 +20,15 @@
   },
   "scripts": {
     "processjpeg": "cp content/**/**/*.jpeg static/assets/images/content/",
-    "proccesspng": "cp content/**/**/*.png static/assets/images/content/",
-    "proccessgif": "cp content/**/**/*.gif static/assets/images/content/",
+    "processpng": "cp content/**/**/*.png static/assets/images/content/",
+    "processgif": "cp content/**/**/*.gif static/assets/images/content/",
+    "processimages": "npm run processjpeg && npm run processpng && npm run processgif",
     "processmd": "processmd content/**/*.md --outputDir static/content --summaryOutput content/summary.json",
-    "content": "npm run processjpeg && npm run proccesspng && npm run proccessgif && npm run processmd",
+    "content": "concurrently \"npm run processimages\" \"npm run processmd\"",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js",
     "dev": "NODE_ENV=development npm run content && node server.js",
-    "prod": "npm run build && npm run content && now && now alias"
+    "prod": "npm run build && npm run content && now && now alias",
+    "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "express": "^4.15.4",
@@ -51,6 +52,7 @@
   "devDependencies": {
     "babel-plugin-styled-components": "^1.1.4",
     "babel-preset-stage-0": "^6.24.1",
+    "concurrently": "^3.5.0",
     "eslint": "^4.3.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-loader": "^1.9.0",
