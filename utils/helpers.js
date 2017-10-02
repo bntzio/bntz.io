@@ -1,13 +1,19 @@
 import uuid from 'uuid/v4'
-import ListItem from '../components/common/ListItem'
+import BookItem from '../components/BookItem'
+import JournalItem from '../components/JournalItem'
 import BlogItem from '../components/BlogItem'
 import WorkFrame from '../components/WorkFrame'
 import NowItem from '../components/NowItem'
 
 const h = {
-  renderListItems (items, type) {
+  renderBookItems (items) {
     return items.map(item => {
-      return <ListItem key={uuid()} title={item.title} classname={type} route={type} slug={item.slug} />
+      return <BookItem key={uuid()} title={item.title} route='book' slug={item.slug} />
+    })
+  },
+  renderJournalItems (items) {
+    return items.map(item => {
+      return <JournalItem key={uuid()} title={item.title} route='entry' slug={item.slug} date={item.date} />
     })
   },
   renderBlogItems (items, category) {

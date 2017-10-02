@@ -36,7 +36,7 @@ class BookList extends React.Component {
           </Link>
           <Title id="title">Book Reads</Title>
         </BlogNav>
-        {h.renderListItems(books, 'book')}
+        {h.renderBookItems(books)}
       </Container>
     )
   }

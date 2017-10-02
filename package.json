@@ -24,7 +24,7 @@
     "processgif": "cp content/**/**/*.gif static/assets/images/content/",
     "processimages": "npm run processjpeg && npm run processpng && npm run processgif",
     "processmd": "processmd content/**/*.md --outputDir static/content --summaryOutput content/summary.json",
-    "content": "concurrently \"npm run processimages\" \"npm run processmd\"",
+    "content": "npm run processimages && npm run processmd",
     "build": "next build",
     "dev": "NODE_ENV=development npm run content && node server.js",
     "prod": "npm run build && npm run content && now && now alias",

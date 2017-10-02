@@ -1,14 +1,16 @@
 import React from 'react'
+import styled from 'styled-components'
 import GSAP from 'react-gsap-enhancer'
+import BackButton from '../components/common/BackButton'
 import h from '../utils/helpers'
-import Container from './common/Container'
-import MiniNav from './common/MiniNav'
+import { Link } from '../routes'
+import { rem } from '../utils/styleUtils'
 import { arrowAnimation, titleAnimation, entriesAnimation } from '../utils/animations'
 
 class Journal extends React.Component {
   componentDidMount () {
     const body = document.querySelector('body')
-    body.style.backgroundColor = '#222222'
+    body.style.backgroundColor = 'white'
 
     const anim1 = this.addAnimation(entriesAnimation)
     const anim2 = this.addAnimation(arrowAnimation)
@@ -26,12 +28,34 @@ class Journal extends React.Component {
     const { entries } = this.props
 
     return (
-      <Container>
-        <MiniNav url="/" title="Daily Journal" />
-        {h.renderListItems(entries, 'entry')}
-      </Container>
+      <JournalContainer>
+        <JournalNav>
+          <Link route="index">
+            <a><BackButton black /></a>
+          </Link>
+          <Title id="title">Daily Journal</Title>
+        </JournalNav>
+        {h.renderJournalItems(entries)}
+      </JournalContainer>
     )
   }
 }
+
+const JournalContainer = styled.main`
+  color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`
+
+const JournalNav = styled.nav`
+  display: flex;
+  align-items: center;
+`
+
+const Title = styled.h4`
+  font-family: 'Proxima N W01 Bold';
+  ${rem('font-size', 20)};
+`
 
 export default GSAP()(Journal)

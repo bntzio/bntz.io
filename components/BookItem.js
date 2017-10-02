@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import { Link } from '../../routes'
-import { rem, media } from '../../utils/styleUtils'
+import { Link } from '../routes'
+import { rem, media } from '../utils/styleUtils'
 
-const ListItem = ({ key, title, route, slug }) => {
+const BookItem = ({ key, title, route, slug }) => {
   return (
     <Item key={key}>
       <h2>
@@ -43,4 +43,4 @@ const Item = styled.div`
   }
 `
 
-export default ListItem
+export default BookItem

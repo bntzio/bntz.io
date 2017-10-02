@@ -3,9 +3,9 @@ import Entry from '../components/Entry'
 import Layout from '../components/layout/'
 import { getSlugsAndPaths } from '../utils/content'
 
-const entry = ({ title, body, feel }) => (
+const entry = ({ title, body, feel, date }) => (
   <Layout>
-    <Entry title={title} body={body} feel={feel} />
+    <Entry title={title} body={body} feel={feel} date={date} />
   </Layout>
 )
 
@@ -17,7 +17,9 @@ const findBySlug = async (slug) => {
 
   slugsAndPaths.forEach(file => {
     if (file.slug === slug) {
-      entryPath = file.path
+      if (file.path.includes('entries') === true) {
+        entryPath = file.path
+      }
     }
   })
 
@@ -31,7 +33,7 @@ entry.getInitialProps = async ({ query }) => {
   const slug = query.slug
   const entry = await findBySlug(slug)
 
-  return { title: entry.title, body: entry.bodyHtml, feel: entry.feel }
+  return { title: entry.title, body: entry.bodyHtml, feel: entry.feel, date: entry.date }
 }
 
 export default entry
