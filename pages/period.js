@@ -3,9 +3,9 @@ import Period from '../components/Period'
 import Layout from '../components/layout/'
 import { getSlugsAndPaths } from '../utils/content'
 
-const period = ({ title, body }) => (
+const period = ({ title, body, date }) => (
   <Layout>
-    <Period title={title} body={body} />
+    <Period title={title} body={body} date={date} />
   </Layout>
 )
 
@@ -31,7 +31,7 @@ period.getInitialProps = async ({ query }) => {
   const slug = query.slug
   const now = await findBySlug(slug)
 
-  return { title: now.title, body: now.bodyHtml }
+  return { title: now.title, body: now.bodyHtml, date: now.date }
 }
 
 export default period

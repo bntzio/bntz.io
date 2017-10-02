@@ -26,7 +26,7 @@
     "content": "npm run processjpeg && npm run proccesspng && npm run proccessgif && npm run processmd",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "dev": "NODE_ENV=development node server.js",
+    "dev": "NODE_ENV=development npm run content && node server.js",
     "prod": "npm run build && npm run content && now && now alias"
   },
   "dependencies": {
