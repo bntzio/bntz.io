@@ -223,6 +223,8 @@ const Body = styled.div`
   img {
     display: block;
     margin: 0 auto;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
     width: 270px;
     height: auto;
 
