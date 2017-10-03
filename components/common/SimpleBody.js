@@ -12,6 +12,12 @@ const Body = styled.section`
  color: ${props => props.color};
  ${rem('font-size', 16)};
 
+ a {
+   text-decoration: none;
+   border-bottom: 3px solid ${props => props.highlightColor};
+   color: ${props => props.color};
+ }
+
  & * {
    &::selection {
      background: ${props => props.highlightColor};
