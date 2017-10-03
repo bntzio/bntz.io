@@ -33,7 +33,7 @@ const Item = styled.div`
 
       ${media.desktop`
         &:hover {
-          cursor: default;
+          cursor: pointer;
           border-bottom: 3px solid white;
         }
       `}

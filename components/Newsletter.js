@@ -36,7 +36,7 @@ class Newsletter extends React.Component {
         </ProjectNav>
         <Hero animated background="black" color="white">
           <Title>Join the Newsletter for Maker People</Title>
-          <Subtitle>No bullshit content ever. Period.</Subtitle>
+          <Subtitle>Code 👨‍💻 Design 👨‍🎨 Marketing 📈 Business 💰</Subtitle>
         </Hero>
         <div id="content">
           <Body>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Body>
@@ -66,9 +66,8 @@ const Title = styled.h2`
 `
 
 const Subtitle = styled.h3`
-  font-family: 'Proxima N W01 Bold';
+  font-family: 'Metro Nova W01 Regular', sans-serif;
   word-spacing: 4px;
-  letter-spacing: .5px;
   ${rem('font-size', 16)};
 
   ${media.tablet`
