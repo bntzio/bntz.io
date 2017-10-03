@@ -134,6 +134,7 @@ const ProjectNav = styled.nav`
 
 const Title = styled.h2`
   font-family: 'Proxima Nova W01 Medium';
+  
   ${rem('font-size', 26)};
 
   ${media.tablet`
@@ -146,7 +147,7 @@ const Title = styled.h2`
 `
 
 const Description = styled.h3`
-  font-family: 'Proxima N W01 Reg';
+  font-family: 'Metro Nova W01 Regular';
   ${rem('font-size', 16)};
 
   ${media.tablet`
@@ -190,27 +191,68 @@ const Github = styled.div`
 `
 
 const Body = styled.div`
-  font-family: 'Proxima N W01 Thin Reg';
-  ${rem('font-size', 20)};
+  ${rem('font-size', 16)};
+  font-family: 'Proxima N W01 Reg';
   color: #555;
   line-height: 40px;
   word-spacing: .6px;
   margin: 10%;
 
+  a {
+    color: #555;
+    text-decoration: none;
+    border-bottom: 1.5px dashed #555;
+
+    &:hover {
+      border-bottom-style: solid;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Proxima Nova W01 Medium';
+    ${rem('font-size', 16)};
+
+    ${media.tablet`
+      ${rem('font-size', 18)};
+    `}
+    ${media.desktop`
+      ${rem('font-size', 20)};
+    `}
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 270px;
+    height: auto;
+
+    ${media.tablet`
+      width: 360px;
+    `}
+    ${media.desktop`
+      width: 420px;
+    `}
+    ${media.largeDesktop`
+      width: 540px;
+    `}
+  }
+
   ${media.tablet`
-    ${rem('font-size', 21)};
+    ${rem('font-size', 18)};
     ${rem('padding-top', 15)};
     ${rem('padding-bottom', 15)};
     line-height: 41px;
     margin: 0 15%;
   `}
-
   ${media.desktop`
-    ${rem('font-size', 22)};
+    ${rem('font-size', 20)};
     ${rem('padding-top', 25)};
     ${rem('padding-bottom', 25)};
     line-height: 42px;
     margin: 0 20%;
+  `}
+  ${media.largeDesktop`
+    margin: 0 25%;
   `}
 `
 
