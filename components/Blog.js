@@ -4,7 +4,6 @@ import GSAP from 'react-gsap-enhancer'
 import BackButton from './common/BackButton'
 import h from '../utils/helpers'
 import { Link } from '../routes'
-import { rem } from '../utils/styleUtils'
 import { arrowAnimation, postsAnimation } from '../utils/animations'
 
 class Blog extends React.Component {
@@ -33,22 +32,22 @@ class Blog extends React.Component {
           </Link>
         </BlogNav>
         <BlogPosts id="blog-posts">
-          <Category>Code</Category>
+          <Category>Code 👨‍💻</Category>
           {h.renderBlogItems(posts, 'code')}
 
-          <Category>Business</Category>
+          <Category>Business 💰</Category>
           {h.renderBlogItems(posts, 'business')}
 
-          {/* <Category>Marketing</Category>
+          {/* <Category>Marketing 📈</Category>
           {h.renderBlogItems(posts, 'marketing')} */}
 
-          {/* <Category>Design</Category>
+          {/* <Category>Design 👨‍🎨</Category>
           {h.renderBlogItems(posts, 'design')} */}
 
-          <Category>Life</Category>
+          <Category>Life 🌲</Category>
           {h.renderBlogItems(posts, 'life')}
 
-          {/* <Category>Random</Category>
+          {/* <Category>Random 🤔</Category>
           {h.renderBlogItems(posts, 'random')} */}
         </BlogPosts>
       </BlogContainer>
@@ -76,9 +75,9 @@ const BlogPosts = styled.div`
 `
 
 const Category = styled.p`
-  font-family: 'Neuton', serif;
-  font-weight: 400;
-  ${rem('font-size', 22)};
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
 `
 
 export default GSAP()(Blog)

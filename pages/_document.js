@@ -13,7 +13,7 @@ export default class Doc extends Document {
     const styleTags = sheet.getStyleElement()
     // fonts
     const fonts = <script type="text/javascript" src="//fast.fonts.net/jsapi/889fd395-7d38-47c6-b3da-f01e384df9a5.js"></script>
-    const googleFonts = <link href="https://fonts.googleapis.com/css?family=Neuton:300,400,400i" rel="stylesheet" />
+    const googleFonts = <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,400i,500|Roboto:500,600" rel="stylesheet" />
     // jquery
     const jquery = <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     // selection-sharer (https://github.com/xdamman/selection-sharer)

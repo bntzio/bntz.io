@@ -72,9 +72,9 @@ const PostNav = styled.nav`
 `
 
 const Title = styled.h2`
-  font-family: 'Neuton', serif;
-  font-weight: 400;
-  ${rem('font-size', 32)};
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
   ${rem('margin-top', 100)};
 
   ${media.desktop`
@@ -87,8 +87,8 @@ const Title = styled.h2`
 `
 
 const Timestamp = styled.time`
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-style: italic;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   color: #777;
   ${rem('font-size', 14)};
 
@@ -98,21 +98,11 @@ const Timestamp = styled.time`
 `
 
 const Body = styled.div`
-  font-family: 'Neuton', serif;
-  font-weight: 300;
-  line-height: 36px;
-  word-spacing: .5px;
-  ${rem('font-size', 18)};
-
-  ${media.tablet`
-    ${rem('font-size', 20)};
-  `}
-  ${media.desktop`
-    ${rem('font-size', 21)};
-  `}
-  ${media.largeDesktop`
-    ${rem('font-size', 22)};
-  `}
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 400;
+  line-height: 2rem;
+  word-spacing: .2px;
+  font-size: 1rem;
 
   & * {
     &::selection {
@@ -121,8 +111,9 @@ const Body = styled.div`
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Neuton', serif;
-    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
   }
 
   a {
@@ -136,6 +127,8 @@ const Body = styled.div`
   img {
     display: block;
     margin: 0 auto;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
     width: 270px;
     height: auto;
 

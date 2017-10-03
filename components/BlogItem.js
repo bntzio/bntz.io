@@ -20,9 +20,10 @@ const Item = styled.div`
   text-align: center;
 
   h2 {
-    font-family: 'Neuton', serif;
-    font-weight: 300;
-    font-size: 20px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    line-height: 1.6rem;
+    font-size: 1rem;
     margin: 0.2rem 0;
 
     a {
