@@ -43,8 +43,6 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-gsap-enhancer": "^0.3.0",
-    "react-redux": "^5.0.5",
-    "redux": "^3.7.2",
     "styled-components": "^2.0.1",
     "styled-normalize": "^2.0.0",
     "uuid": "^3.1.0"
@@ -60,7 +58,6 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^7.1.0",
     "eslint-plugin-standard": "^3.0.1",
-    "processmd": "^3.1.4",
-    "remote-redux-devtools": "^0.5.12"
+    "processmd": "^3.1.4"
   }
 }
