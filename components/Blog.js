@@ -76,8 +76,9 @@ const BlogPosts = styled.div`
 `
 
 const Category = styled.p`
-  font-family: 'Arethusa W00 SemiBold';
-  ${rem('font-size', 24)};
+  font-family: 'Neuton', serif;
+  font-weight: 400;
+  ${rem('font-size', 22)};
 `
 
 export default GSAP()(Blog)

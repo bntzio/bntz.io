@@ -59,7 +59,7 @@ const PostContainer = styled.section`
   `}
 
   ${media.largeDesktop`
-    margin: 0 20%;
+    margin: 0 25%;
   `}
 `
 
@@ -70,7 +70,8 @@ const PostNav = styled.nav`
 `
 
 const Title = styled.h2`
-  font-family: 'KievitWeb W03 Bold';
+  font-family: 'Neuton', serif;
+  font-weight: 400;
   ${rem('font-size', 32)};
   ${rem('margin-top', 100)};
 
@@ -79,7 +80,7 @@ const Title = styled.h2`
   `}
 
   &::selection {
-    background: yellow;
+    background: #fbe100;
   }
 `
 
@@ -90,59 +91,61 @@ const Rating = styled.p`
   ${rem('font-size', 14)};
 
   &::selection {
-    background: yellow;
+    background: #fbe100;
   }
 `
 
 const Body = styled.div`
- font-family: 'Charter ITC W01';
- line-height: 36px;
- word-spacing: .5px;
- ${rem('font-size', 18)};
+  font-family: 'Neuton', serif;
+  font-weight: 300;
+  line-height: 36px;
+  word-spacing: .5px;
+  ${rem('font-size', 18)};
 
- ${media.tablet`
-   ${rem('font-size', 20)};
- `}
- ${media.desktop`
-   ${rem('font-size', 21)};
- `}
- ${media.largeDesktop`
-   ${rem('font-size', 22)};
- `}
+  ${media.tablet`
+    ${rem('font-size', 20)};
+  `}
+  ${media.desktop`
+    ${rem('font-size', 21)};
+  `}
+  ${media.largeDesktop`
+    ${rem('font-size', 22)};
+  `}
 
- & * {
-   &::selection {
-     background: yellow;
-   }
- }
+  & * {
+    &::selection {
+      background: #fbe100;
+    }
+  }
 
- h1, h2, h3, h4, h5, h6 {
-   font-family: 'KievitWeb W03 Bold';
- }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Neuton', serif;
+    font-weight: 400;
+  }
 
- a {
-   color: rgba(0, 0, 0, 0.8);
-   background: yellow;
-   transition: .6s ease all;
-   text-decoration: none;
- }
+  a {
+    color: rgba(0, 0, 0, 0.8);
+    transition: .6s ease all;
+    text-decoration: none;
+    border: 2px solid #fbe100;
+  }
 
- img {
-   display: block;
-   margin: 0 auto;
-   width: 270px;
-   height: auto;
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 270px;
+    height: auto;
 
-   ${media.tablet`
-     width: 360px;
-   `}
-   ${media.desktop`
-     width: 420px;
-   `}
-   ${media.largeDesktop`
-     width: 540px;
-   `}
- }
+    ${media.tablet`
+      width: 360px;
+    `}
+    ${media.desktop`
+      width: 420px;
+    `}
+    ${media.largeDesktop`
+      width: 540px;
+    `}
+  }
 `
 
 export default GSAP()(Book)

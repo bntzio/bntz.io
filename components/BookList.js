@@ -11,7 +11,7 @@ import { arrowAnimation, titleAnimation, booksAnimation } from '../utils/animati
 class BookList extends React.Component {
   componentDidMount () {
     const body = document.querySelector('body')
-    body.style.backgroundColor = '#222222'
+    body.style.backgroundColor = '#fbe100'
 
     const anim1 = this.addAnimation(booksAnimation)
     const anim2 = this.addAnimation(arrowAnimation)
@@ -31,8 +31,8 @@ class BookList extends React.Component {
     return (
       <Container>
         <BlogNav>
-          <Link route="index">
-            <a><BackButton /></a>
+          <Link route="about">
+            <a><BackButton black /></a>
           </Link>
           <Title id="title">Book Reads</Title>
         </BlogNav>
@@ -49,6 +49,7 @@ const BlogNav = styled.nav`
 
 const Title = styled.h4`
   font-family: 'Proxima N W01 Bold';
+  color: black;
   ${rem('font-size', 20)};
 `
 

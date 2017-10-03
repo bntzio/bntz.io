@@ -5,7 +5,7 @@ import { rem, media } from '../utils/styleUtils'
 const BookItem = ({ key, title, route, slug }) => {
   return (
     <Item key={key}>
-      <h2>
+      <h2 className="book">
         <Link route={route} params={{ slug }}>
           <a>{title}</a>
         </Link>
@@ -30,13 +30,13 @@ const Item = styled.div`
     font-size: 20px;
 
     a {
-      color: white;
+      color: black;
       text-decoration: none;
 
       ${media.desktop`
         &:hover {
           cursor: pointer;
-          border-bottom: 3px solid white;
+          border-bottom: 3px solid black;
         }
       `}
     }

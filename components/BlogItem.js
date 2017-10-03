@@ -20,13 +20,18 @@ const Item = styled.div`
   text-align: center;
 
   h2 {
-    font-family: 'Proxima N W01 Smbd';
+    font-family: 'Neuton', serif;
+    font-weight: 300;
     font-size: 20px;
     margin: 0.2rem 0;
 
     a {
       text-decoration: none;
       cursor: pointer;
+
+      &:hover {
+        color: #ff3b6b;
+      }
     }
   }
 `
