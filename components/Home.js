@@ -240,7 +240,6 @@ const Poster = styled.div`
 
 const Word = styled.h2`
   color: #111;
-  font-style: italic;
   text-transform: uppercase;
   margin: 0;
   font-family: 'Frutiger LT W01_88 X Blk Cn It';
@@ -273,7 +272,6 @@ const StyledLink = styled.a`
     ${rem('font-size', 48)};
     font-family: 'Frutiger LT W01_88 X Blk Cn It';
     color: white;
-    font-style: italic;
     text-transform: uppercase;
     text-align: center;
 
