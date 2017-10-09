@@ -1,6 +1,6 @@
 ---
 title: Ok I failed again
-feel: ":)"
+feel: ":|"
 date: 10/09/2017
 slug: "2"
 ---
