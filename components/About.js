@@ -49,6 +49,7 @@ class About extends React.Component {
               <Paragraph>If you like reading too, you may find very useful <Link href="/books"><a>my book reviews</a></Link>.</Paragraph>
               <Paragraph>Other interesting links are: <Link href="/"><a>my commonplace book</a></Link> and <Link href="/"><a>tools I use</a></Link>.</Paragraph>
               <Paragraph>You can find me on <a href="https://twitter.com/bntzio" target="_blank">Twitter</a> or <a href="https://Instagram.com/bntzio" target="_blank">Instagram</a>.</Paragraph>
+              <Paragraph>Also, feel free to <a href="https://github.com/bntzio/ama" target="_blank">ask me anything</a>.</Paragraph>
               <Paragraph>Cheers 🙂</Paragraph>
             </Body>
           </MarkdownWrapper>
