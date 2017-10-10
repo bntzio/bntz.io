@@ -245,7 +245,7 @@ The results \*sigh\* 😞 haha
 
 I earned **$0 USD** Z-E-R-O, a big O.
 
-At the beginning I was pretty excited because for the first time ever a writer for the VICE website contacted me asking for an interview about Phoenix 😍 I was getting attention from the press! 😱
+At the beginning I was pretty excited because for the first time ever a writer for the [VICE](https://www.vice.com/) website contacted me asking for an interview about Phoenix 😍 I was getting attention from the press! 😱
 
 ![Phoenix Vice Message](https://bntz.io/static/assets/images/content/phoenix-vice-message.png)
 
