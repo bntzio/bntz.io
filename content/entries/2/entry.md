@@ -7,7 +7,7 @@ slug: "2"
 
 Whoa! I haven't published anything on my journal since my first entry! 😬 I know I know, I said I was going to write daily, but common, I'm just starting to improve my productivity and document my journey, it's hard to do, but yeah I accept it, I procrastinated (again) and I didn't write on my journal as promised 🙄
 
-Let's get for the second round, today is Sunday! 😄
+Let's get for the second round, today is Monday! 😄
 
 So a quick recap of what I did last week...
 
@@ -15,9 +15,9 @@ I got some freelance jobs so I was working on that stuff the past days, and so I
 
 Anyways, that was all I did last week, work on some freelance projects as well as hang-out with some friends in the weekend, we went to a club on Friday night and we spent a good night together 🍸
 
-Well, today is Sunday and it's time to plan the week! 🙌
+Well, today is Monday and it's time to start the week! 🙌
 
-My goal for tomorrow is to really finish this site!
+My goal for today is to really finish this site!
 
 Hey, you know what? I'm going to start writing little sections everyday in my entries, things like **daily/weekly goals** to stay accountant and if something else apart from goals comes to my mind I'll write them down as well.
 
