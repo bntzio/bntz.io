@@ -77,11 +77,15 @@ I used [Foundation](https://foundation.zurb.com/sites.html) to get it done quick
 ### What was the build process? ⚒️
 I started to write the email sequences in ConvertKit, I had like 25 emails with one challenge each one.
 
+The site looked like this:
+
+![Rejection Challenges](https://bntz.io/static/assets/images/content/rejection-challenges.png)
+
 ### How long does it took to make? 📆
 3 days 😄
 
 ### How much did it cost to build? 💸
-Just the [ConvertKit](https://convertkit.com/) subscription but since I used it for my newsletter as well I was going to pay anyways, apart from that the *rejectionchalleg.es* domain was the only expense.
+Just the [ConvertKit](https://convertkit.com/) ($29 USD/month) and the [fonts.com](https://www.fonts.com/) ($10 USD/month) subscriptions, but since I used to use them for my newsletter and sites fonts I was paying for them anyways, apart from that the *rejectionchalleg.es* domain ($17 USD/year) was the only extra expense.
 
 ### Was it hard to make? 🙈
 Nope! It's just HTML and CSS 🙂 pretty easy!
@@ -105,6 +109,7 @@ It's ok to make non-profit projects and build stuff to learn something, but if y
 * [Surge](https://surge.sh/) to host a static site for free
 * [Zeit](https://zeit.co/) has free and premium plans (deployments)
 * [Mailchimp](https://mailchimp.com/) for emails offers a free-tier (0-1k subscribers)
+* [Google Fonts](https://fonts.google.com/) has a lot of free fonts to use
 * [GitHub Pages](https://pages.github.com/) is free as well (static site hosting)
 * [Netlify](https://www.netlify.com/) has a free option too (static site hosting)
 
