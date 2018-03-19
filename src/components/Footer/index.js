@@ -1,27 +1,47 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const StyledFooter = styled.footer`
-  display: flex;
-  justify-content: center;
-  p {
-    color: #1d1d1d;
-    font-size: 0.8rem;
-    font-family: 'Lato', sans-serif;
-    font-style: italic;
-    font-weight: 600;
-    a {
-      color: red;
-      text-decoration: none;
+const FooterContainer = styled.footer`
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3rem;
+  background: #ff1f4f;
+  padding: -3rem;
+
+  @media(min-width: 768px) {
+    height: 3.5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+
+    li {
+      color: white;
+      margin-bottom: 2px;
+    }
+
+    .desktopOnly {
+      display: none;
+
+      @media (min-width: 768px) {
+        display: block;
+      }
     }
   }
 `
 
 const Footer = ({ children }) => {
   return (
-    <StyledFooter>
+    <FooterContainer>
       {children}
-    </StyledFooter>
+    </FooterContainer>
   )
 }
 
