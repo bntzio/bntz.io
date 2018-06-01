@@ -1,9 +1,10 @@
 {
-  "name": "gatsby-starter-superstylin",
-  "version": "2.0.1",
-  "description": "A Gatsby starter with styled-components",
+  "name": "bntz",
+  "version": "1.0.0",
+  "description": "My personal website",
   "main": "n/a",
   "scripts": {
+    "start": "serve public/",
     "build": "gatsby build",
     "develop": "gatsby develop"
   },
@@ -28,6 +29,7 @@
     "gatsby-plugin-react-helmet": "^2.0.6",
     "gatsby-plugin-styled-components": "^2.0.9",
     "react-helmet": "^5.2.0",
+    "serve": "^6.5.3",
     "styled-components": "2.4.0"
   },
   "devDependencies": {
