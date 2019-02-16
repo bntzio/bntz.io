@@ -6,6 +6,8 @@
   "scripts": {
     "start": "serve public/",
     "build": "gatsby build",
+    "now-build": "npm run build",
+    "now": "now && now alias",
     "develop": "gatsby develop"
   },
   "repository": {
