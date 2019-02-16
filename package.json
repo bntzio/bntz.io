@@ -29,7 +29,7 @@
     "gatsby-plugin-react-helmet": "^2.0.6",
     "gatsby-plugin-styled-components": "^2.0.9",
     "react-helmet": "^5.2.0",
-    "serve": "^6.5.3",
+    "serve": "7.0.0",
     "styled-components": "2.4.0"
   },
   "devDependencies": {
