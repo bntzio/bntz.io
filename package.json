@@ -1,8 +1,12 @@
 {
   "name": "bntz",
-  "version": "1.0.0",
-  "description": "My personal website",
+  "version": "0.1.0",
+  "description": "My personal site",
+  "author": "Enrique Benitez <hello@bntz.io>",
+  "private": true,
+  "license": "MIT",
   "main": "n/a",
+  "homepage": "https://github.com/bntzio/bntz.io",
   "scripts": {
     "start": "serve public/",
     "build": "gatsby build",
@@ -10,21 +14,6 @@
     "now": "now && now alias",
     "develop": "gatsby develop"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bntzio/gatsby-starter-superstylin.git"
-  },
-  "keywords": [
-    "react",
-    "gatsby",
-    "styled-components"
-  ],
-  "author": "Enrique Benitez <bntz.io>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/bntzio/gatsby-starter-superstylin/issues"
-  },
-  "homepage": "https://github.com/bntzio/gatsby-starter-superstylin#readme",
   "dependencies": {
     "gatsby": "^1.9.139",
     "gatsby-link": "^1.6.32",
