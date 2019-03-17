@@ -1,6 +1,6 @@
-import { injectGlobal } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
-export default injectGlobal`
+export default createGlobalStyle`
   /*! minireset.css v0.0.3 | MIT License | github.com/jgthms/minireset.css */
   html,
   body,

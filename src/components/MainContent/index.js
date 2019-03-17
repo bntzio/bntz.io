@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import Layout from '../../layouts'
+
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -79,12 +81,10 @@ const MainContainer = styled.div`
   }
 `
 
-const MainContent = ({ children }) => {
-  return (
-    <MainContainer>
-      {children}
-    </MainContainer>
-  )
-}
+const MainContent = ({ children }) => (
+  <Layout>
+    <MainContainer>{children}</MainContainer>
+  </Layout>
+)
 
 export default MainContent
