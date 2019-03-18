@@ -82,4 +82,9 @@ export default createGlobalStyle`
     padding: 0;
     text-align: left;
   }
+
+  /* Custom styles */
+  body {
+    overflow-x: hidden;
+  }
 `

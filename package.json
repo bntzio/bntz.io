@@ -15,14 +15,17 @@
     "develop": "gatsby develop"
   },
   "dependencies": {
+    "d3": "^5.9.2",
     "gatsby": "^2.1.37",
     "gatsby-plugin-react-helmet": "^3.0.10",
     "gatsby-plugin-styled-components": "^3.0.7",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-faux-dom": "^4.4.0",
     "react-helmet": "^5.2.0",
     "serve": "7.0.0",
-    "styled-components": "^4.1.3"
+    "styled-components": "^4.1.3",
+    "textures": "^1.2.0"
   },
   "devDependencies": {
     "standard": "^11.0.0"

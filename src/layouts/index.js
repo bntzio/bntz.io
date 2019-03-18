@@ -2,14 +2,17 @@ import React, { Fragment } from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import GlobalStyle from '../helpers/globalStyles'
+import Header from './../components/Header'
+import Footer from './../components/Footer'
+import GlobalStyle from './../helpers/globalStyles'
+import Texture from './../components/Texture'
+import Wave from './../components/Wave'
 
 const Main = styled.main`
   font-family: 'Work Sans', sans-serif;
   font-size: 16px;
   font-weight: 400;
+  height: 100vh;
 `
 
 const MainWrapper = styled.div`
@@ -23,39 +26,27 @@ const MainWrapper = styled.div`
 export default ({ children }) => (
   <Fragment>
     <GlobalStyle />
+    <Helmet
+      title='Enrique Benitez - Full-Stack Developer and Digital Maker'
+      link={[
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css?family=Work+Sans:300,400,500'
+        },
+        {
+          rel: 'stylesheet',
+          href: 'https://cloud.typography.com/7471216/6094192/css/fonts.css'
+        }
+      ]}
+    />
     <Main>
-      <Helmet
-        title='Superstylin | A Gatsby Starter with Style 🕶️'
-        link={[
-          {
-            rel: 'stylesheet',
-            href:
-              'https://fonts.googleapis.com/css?family=Work+Sans:300,400,500'
-          },
-          {
-            rel: 'stylesheet',
-            href: 'https://cloud.typography.com/7471216/6094192/css/fonts.css'
-          }
-        ]}
-      />
-
       <MainWrapper>
+        <Texture />
         <Header />
         {children}
       </MainWrapper>
-
       <Footer>
-        <ul>
-          <li>about</li>
-          <li>blog</li>
-          <li>projects</li>
-          <li className='desktopOnly'>journal</li>
-          <li className='desktopOnly'>now</li>
-          <li className='desktopOnly'>open source</li>
-          <li className='desktopOnly'>cheatsheets</li>
-          <li className='desktopOnly'>courses</li>
-          <li>newsletter</li>
-        </ul>
+        <Wave />
       </Footer>
     </Main>
   </Fragment>

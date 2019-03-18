@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import logoImage from '../../assets/logo.png'
+import logo from './../../assets/images/logo.svg'
 
 const LogoContainer = styled.div`
   img {
@@ -16,7 +16,7 @@ const LogoContainer = styled.div`
 const Header = () => {
   return (
     <LogoContainer>
-      <img src={logoImage} alt='Enrique Benitez' />
+      <img src={logo} alt='Enrique Benitez' />
     </LogoContainer>
   )
 }

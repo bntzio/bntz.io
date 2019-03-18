@@ -9,7 +9,7 @@ const MainContainer = styled.div`
 
   h2 {
     display: none;
-    color: #ff1f4f;
+    color: #000;
     font-size: 1.6rem;
     font-weight: 500;
 
