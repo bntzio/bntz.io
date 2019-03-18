@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-
-import About from './../components/About'
-import Wave from './../components/Wave'
+/** custom imports */
+import About from 'components/About'
+import Wave from 'components/Wave'
 
 export default () => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-
-import wave from './../../assets/images/wave.svg'
+/** custom imports */
+import wave from 'assets/images/wave.svg'
 
 const Wave = styled.div`
   background: ${props => `url(${props.wave})`} repeat-x;

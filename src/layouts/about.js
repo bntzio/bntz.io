@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
-
-import Styles from './../helpers/globalStyles'
-import Header from './../components/Header'
+/** custom imports */
+import Styles from 'helpers/globalStyles'
+import Header from 'components/Header'
 
 const Main = styled.main`
   font-family: 'Work Sans', sans-serif;

@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-
-import logoSvg from './../../assets/images/logo.svg'
+/** custom imports */
+import logoSvg from 'assets/images/logo.svg'
 
 const Header = ({ logo }) => {
   const showLogo = () => {

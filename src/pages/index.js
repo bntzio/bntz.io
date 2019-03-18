@@ -2,11 +2,11 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Parallax from 'parallax-js'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
-
-import Home from './../components/Home'
-import Header from './../components/Header'
-import Wave from './../components/Wave'
-import Texture from './../components/Texture'
+/** custom imports */
+import Home from 'components/Home'
+import Header from 'components/Header'
+import Wave from 'components/Wave'
+import Texture from 'components/Texture'
 
 export default () => {
   useEffect(() => {

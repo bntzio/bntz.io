@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-
-import gif from '../assets/404.gif'
+/** custom imports */
+import gif from 'assets/404.gif'
 
 const Styled404 = styled.div`
   display: flex;
@@ -19,7 +19,7 @@ const Styled404 = styled.div`
   }
   img {
     width: 38rem;
-    border: 4px solid #FEC83E;
+    border: 4px solid #fec83e;
     border-radius: 4px;
     margin-bottom: 2rem;
     width: 50%;

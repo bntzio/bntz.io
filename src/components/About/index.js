@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-
-import Layout from './../../layouts/about'
+/** custom imports */
+import Layout from 'layouts/about'
 
 const About = () => (
   <Layout>

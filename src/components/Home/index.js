@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-
-import Layout from './../../layouts'
-import twitter from './../../assets/icons/twitter.svg'
-import facebook from './../../assets/icons/facebook.svg'
-import instagram from './../../assets/icons/instagram.svg'
-import codepen from './../../assets/icons/codepen.svg'
-import github from './../../assets/icons/github.svg'
+/** custom imports */
+import Layout from 'layouts'
+import twitter from 'assets/icons/twitter.svg'
+import facebook from 'assets/icons/facebook.svg'
+import instagram from 'assets/icons/instagram.svg'
+import codepen from 'assets/icons/codepen.svg'
+import github from 'assets/icons/github.svg'
 
 const Home = () => (
   <Layout>
