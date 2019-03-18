@@ -18,12 +18,10 @@ const Wrapper = styled.div`
 `
 
 export default ({ children }) => (
-  <section>
-    <Layout>
-      <Wrapper>
-        <Logo />
-        {children}
-      </Wrapper>
-    </Layout>
-  </section>
+  <Layout>
+    <Wrapper>
+      <Logo />
+      {children}
+    </Wrapper>
+  </Layout>
 )
