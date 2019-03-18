@@ -65,9 +65,17 @@ const Content = styled.div`
     color: rgb(0, 0, 0);
     font-size: 2.4rem;
     font-weight: 500;
+    width: 100%;
 
     @media (min-width: 768px) {
+      width: 90%;
       font-size: 3rem;
+    }
+    @media (min-width: 1024px) {
+      width: 50%;
+    }
+    @media (min-width: 1200px) {
+      width: 100%;
     }
   }
 
@@ -80,9 +88,12 @@ const Content = styled.div`
     margin-top: 3.3rem;
 
     @media (min-width: 768px) {
-      width: 50%;
+      width: 90%;
       font-size: 1.9rem;
       margin-top: 5rem;
+    }
+    @media (min-width: 1024px) {
+      width: 50%;
     }
   }
 `
