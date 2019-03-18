@@ -1,9 +1,52 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import twitter from './../../assets/icons/twitter.svg'
+import facebook from './../../assets/icons/facebook.svg'
+import instagram from './../../assets/icons/instagram.svg'
+import codepen from './../../assets/icons/codepen.svg'
+import github from './../../assets/icons/github.svg'
+
 import Layout from '../../layouts'
 
-const MainContainer = styled.div`
+const Home = () => (
+  <Layout>
+    <Main>
+      <h2>
+        Front-end designer <span>by day</span>
+      </h2>
+      <h2>
+        Back-end developer <span>by night</span>
+      </h2>
+      <h2 id='mobile-title'>
+        Full-Stack Developer <span>and</span> Digital Maker
+      </h2>
+      <p>
+        Hello 👋 I’m Enrique, a self-taught full-stack digital maker specialized
+        in creating beautiful apps.
+      </p>
+      <ul>
+        <li>
+          <img src={twitter} alt='Twitter' />
+        </li>
+        <li>
+          <img src={facebook} alt='Twitter' />
+        </li>
+        <li>
+          <img src={instagram} alt='Twitter' />
+        </li>
+        <li>
+          <img src={codepen} alt='Twitter' />
+        </li>
+        <li>
+          <img src={github} alt='Twitter' />
+        </li>
+      </ul>
+    </Main>
+  </Layout>
+)
+
+const Main = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -81,10 +124,4 @@ const MainContainer = styled.div`
   }
 `
 
-const MainContent = ({ children }) => (
-  <Layout>
-    <MainContainer>{children}</MainContainer>
-  </Layout>
-)
-
-export default MainContent
+export default Home

@@ -7,12 +7,12 @@ import ReactFauxDOM from 'react-faux-dom'
 const TextureWrapper = styled.div`
   svg {
     position: absolute;
-    top: 0px;
+    top: -50px;
     bottom: 0px;
-    right: 0px;
-    left: 0px;
-    height: 100%;
-    width: 100%;
+    right: -200px;
+    left: -200px;
+    height: 100vh;
+    width: 180vw;
     z-index: -1;
   }
 `
