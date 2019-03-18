@@ -7,16 +7,15 @@ import Header from './../components/Header'
 
 const Main = styled.main`
   font-family: 'Work Sans', sans-serif;
-  font-size: 16px;
   font-weight: 400;
   height: 100vh;
 `
 
 const MainWrapper = styled.div`
-  padding: 3rem;
+  padding: 5rem;
 
   @media (min-width: 768px) {
-    padding: 3.5rem;
+    padding: 6rem;
   }
 `
 

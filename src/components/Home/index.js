@@ -52,22 +52,22 @@ const Main = styled.div`
   h2 {
     display: none;
     color: #000;
-    font-size: 1.6rem;
+    font-size: 2.5rem;
     font-weight: 500;
 
     &:first-child {
-      margin-top: 7rem;
+      margin-top: 11rem;
     }
 
     @media (min-width: 768px) {
-      font-size: 2.4rem;
+      font-size: 3.8rem;
       display: block;
     }
 
     &#mobile-title {
       display: block;
-      margin-top: 4rem;
-      margin-bottom: 1rem;
+      margin-top: 6.4rem;
+      margin-bottom: 1.6rem;
 
       @media (min-width: 768px) {
         display: none;
@@ -82,28 +82,28 @@ const Main = styled.div`
 
   p {
     width: 100%;
-    font-size: 1.1rem;
+    font-size: 1.7rem;
     color: #a5a9b5;
     font-weight: 300;
-    line-height: 1.8rem;
+    line-height: 3rem;
 
     @media (min-width: 768px) {
       width: 50%;
-      font-size: 1.2rem;
-      margin-top: 1rem;
+      font-size: 1.9rem;
+      margin-top: 1.6rem;
     }
   }
 
   ul {
-    margin-top: 2rem;
+    margin-top: 3.2rem;
     display: inline-flex;
     align-items: center;
 
     li {
-      margin-right: 1.4rem;
+      margin-right: 2.2rem;
 
       @media (min-width: 768px) {
-        margin-right: 1.8rem;
+        margin-right: 2.8rem;
       }
 
       &:last-child {
@@ -111,8 +111,8 @@ const Main = styled.div`
       }
 
       img {
-        width: 1.2rem;
-        height: 1.2rem;
+        width: 1.9rem;
+        height: 1.9rem;
 
         @media (min-width: 768px) {
           width: auto;
