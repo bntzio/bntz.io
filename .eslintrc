@@ -3,6 +3,7 @@
   "extends": ["standard", "standard-react"],
   "plugins": ["import", "react"],
   "rules": {
+    "no-unused-vars": 1,
     "import/order": [
       "error",
       {

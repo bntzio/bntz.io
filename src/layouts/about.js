@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 
 import Styles from './../helpers/globalStyles'
-import Logo from './../components/Logo'
+import Header from './../components/Header'
 
 const Main = styled.main`
   font-family: 'Work Sans', sans-serif;
@@ -37,7 +37,7 @@ export default ({ children }) => (
     />
     <Main>
       <MainWrapper>
-        <Logo />
+        <Header logo />
         {children}
       </MainWrapper>
     </Main>

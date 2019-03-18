@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Parallax from 'parallax-js'
-import { disableBodyScroll } from 'body-scroll-lock'
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 
 import Home from './../components/Home'
+import Header from './../components/Header'
 import Wave from './../components/Wave'
 import Texture from './../components/Texture'
 
@@ -13,6 +14,10 @@ export default () => {
     const parallax = new Parallax(scene)
     parallax.friction(0.1, 0.3)
     disableBodyScroll(scene)
+
+    return () => {
+      enableBodyScroll(scene)
+    }
   }, [])
 
   return (
@@ -23,6 +28,9 @@ export default () => {
           <Home />
         </Content>
       </Scene>
+      <Top>
+        <Header />
+      </Top>
       <Footer>
         <Wave />
       </Footer>
@@ -33,6 +41,13 @@ export default () => {
 const Main = styled.main``
 const Scene = styled.section``
 const Content = styled.div``
+
+const Top = styled.div`
+  position: absolute;
+  top: 6rem;
+  left: 6rem;
+  right: 7.5rem;
+`
 
 const Footer = styled.footer`
   position: absolute;
