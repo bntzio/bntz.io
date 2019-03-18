@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Parallax from 'parallax-js'
+import { disableBodyScroll } from 'body-scroll-lock'
 
 import Home from './../components/Home'
 import Wave from './../components/Wave'
@@ -11,6 +12,7 @@ export default () => {
     const scene = document.getElementById('scene')
     const parallax = new Parallax(scene)
     parallax.friction(0.1, 0.3)
+    disableBodyScroll(scene)
   }, [])
 
   return (

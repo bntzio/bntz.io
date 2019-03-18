@@ -84,7 +84,4 @@ export default createGlobalStyle`
   }
 
   /* Custom styles */
-  body {
-    overflow-x: hidden;
-  }
 `
