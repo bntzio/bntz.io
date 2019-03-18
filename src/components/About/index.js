@@ -1,18 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-/** custom imports */
-import Layout from 'layouts/about'
 
 const About = () => (
-  <Layout>
-    <Main>
-      <h2>My name is Enrique</h2>
-      <p>I'm a full stack developer making awesome apps.</p>
-    </Main>
-  </Layout>
+  <Content>
+    <h2>My name is Enrique</h2>
+  </Content>
 )
 
-const Main = styled.div`
+const Content = styled.div`
   display: flex;
   flex-direction: column;
 

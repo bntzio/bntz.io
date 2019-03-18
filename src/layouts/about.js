@@ -1,17 +1,15 @@
-import React, { Fragment } from 'react'
-import Helmet from 'react-helmet'
+import React from 'react'
 import styled from 'styled-components'
 /** custom imports */
-import Styles from 'helpers/globalStyles'
 import Header from 'components/Header'
 
-const Main = styled.main`
+const Layout = styled.section`
   font-family: 'Work Sans', sans-serif;
   font-weight: 400;
   height: 100vh;
 `
 
-const MainWrapper = styled.div`
+const Wrapper = styled.div`
   padding: 5rem;
 
   @media (min-width: 768px) {
@@ -20,26 +18,10 @@ const MainWrapper = styled.div`
 `
 
 export default ({ children }) => (
-  <Fragment>
-    <Styles />
-    <Helmet
-      title='Enrique Benitez - Full-Stack Developer and Digital Maker'
-      link={[
-        {
-          rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css?family=Work+Sans:300,400,500'
-        },
-        {
-          rel: 'stylesheet',
-          href: 'https://cloud.typography.com/7471216/6094192/css/fonts.css'
-        }
-      ]}
-    />
-    <Main>
-      <MainWrapper>
-        <Header logo />
-        {children}
-      </MainWrapper>
-    </Main>
-  </Fragment>
+  <Layout>
+    <Wrapper>
+      <Header logo />
+      {children}
+    </Wrapper>
+  </Layout>
 )

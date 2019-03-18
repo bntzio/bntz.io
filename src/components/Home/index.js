@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 /** custom imports */
-import Layout from 'layouts'
 import twitter from 'assets/icons/twitter.svg'
 import facebook from 'assets/icons/facebook.svg'
 import instagram from 'assets/icons/instagram.svg'
@@ -9,43 +8,41 @@ import codepen from 'assets/icons/codepen.svg'
 import github from 'assets/icons/github.svg'
 
 const Home = () => (
-  <Layout>
-    <Main>
-      <h2>
-        Front-end designer <span>by day</span>
-      </h2>
-      <h2>
-        Back-end developer <span>by night</span>
-      </h2>
-      <h2 id='mobile-title'>
-        Full-Stack Developer <span>and</span> Digital Maker
-      </h2>
-      <p>
-        Hello 👋 I’m Enrique, a self-taught full-stack digital maker specialized
-        in creating beautiful apps.
-      </p>
-      <ul>
-        <li>
-          <img alt='Twitter' src={twitter} />
-        </li>
-        <li>
-          <img src={facebook} alt='Twitter' />
-        </li>
-        <li>
-          <img alt='Twitter' src={instagram} />
-        </li>
-        <li>
-          <img src={codepen} alt='Twitter' />
-        </li>
-        <li>
-          <img src={github} alt='Twitter' />
-        </li>
-      </ul>
-    </Main>
-  </Layout>
+  <Content>
+    <h2>
+      Front-end designer <span>by day</span>
+    </h2>
+    <h2>
+      Back-end developer <span>by night</span>
+    </h2>
+    <h2 id='mobile-title'>
+      Full-Stack Developer <span>and</span> Digital Maker
+    </h2>
+    <p>
+      Hello 👋 I’m Enrique, a self-taught full-stack digital maker specialized
+      in creating beautiful apps.
+    </p>
+    <ul>
+      <li>
+        <img alt='Twitter' src={twitter} />
+      </li>
+      <li>
+        <img src={facebook} alt='Twitter' />
+      </li>
+      <li>
+        <img alt='Twitter' src={instagram} />
+      </li>
+      <li>
+        <img src={codepen} alt='Twitter' />
+      </li>
+      <li>
+        <img src={github} alt='Twitter' />
+      </li>
+    </ul>
+  </Content>
 )
 
-const Main = styled.div`
+const Content = styled.div`
   display: flex;
   flex-direction: column;
 

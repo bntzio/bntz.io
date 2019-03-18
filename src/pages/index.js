@@ -3,6 +3,9 @@ import styled from 'styled-components'
 import Parallax from 'parallax-js'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 /** custom imports */
+import Layout from 'layouts'
+import Head from 'heads'
+import GlobalStyles from 'styles/global'
 import Home from 'components/Home'
 import Header from 'components/Header'
 import Wave from 'components/Wave'
@@ -21,24 +24,29 @@ export default () => {
   }, [])
 
   return (
-    <Main>
-      <Scene id='scene'>
-        <Content data-depth='0.15'>
-          <Texture />
-          <Home />
-        </Content>
-      </Scene>
-      <Top>
-        <Header />
-      </Top>
-      <Footer>
-        <Wave />
-      </Footer>
-    </Main>
+    <>
+      <Head />
+      <GlobalStyles />
+      <main>
+        <Scene id='scene'>
+          <Content data-depth='0.15'>
+            <Texture />
+            <Layout>
+              <Home />
+            </Layout>
+          </Content>
+        </Scene>
+        <Top>
+          <Header />
+        </Top>
+        <Footer>
+          <Wave />
+        </Footer>
+      </main>
+    </>
   )
 }
 
-const Main = styled.main``
 const Scene = styled.section``
 const Content = styled.div``
 
