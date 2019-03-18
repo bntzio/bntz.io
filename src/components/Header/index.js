@@ -15,9 +15,11 @@ const LogoContainer = styled.div`
 
 const Header = () => {
   return (
-    <LogoContainer>
-      <img src={logo} alt='Enrique Benitez' />
-    </LogoContainer>
+    <>
+      <LogoContainer>
+        <img src={logo} alt='Enrique Benitez' />
+      </LogoContainer>
+    </>
   )
 }
 

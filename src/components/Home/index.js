@@ -1,13 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import Layout from './../../layouts'
 import twitter from './../../assets/icons/twitter.svg'
 import facebook from './../../assets/icons/facebook.svg'
 import instagram from './../../assets/icons/instagram.svg'
 import codepen from './../../assets/icons/codepen.svg'
 import github from './../../assets/icons/github.svg'
-
-import Layout from '../../layouts'
 
 const Home = () => (
   <Layout>
@@ -27,13 +26,13 @@ const Home = () => (
       </p>
       <ul>
         <li>
-          <img src={twitter} alt='Twitter' />
+          <img alt='Twitter' src={twitter} />
         </li>
         <li>
           <img src={facebook} alt='Twitter' />
         </li>
         <li>
-          <img src={instagram} alt='Twitter' />
+          <img alt='Twitter' src={instagram} />
         </li>
         <li>
           <img src={codepen} alt='Twitter' />
