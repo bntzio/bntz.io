@@ -11,6 +11,7 @@
         "newlines-between": "always"
       }
     ],
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "standard/no-callback-literal": 0
   }
 }

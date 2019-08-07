@@ -20,6 +20,7 @@
     "gatsby": "^2.1.37",
     "gatsby-plugin-react-helmet": "^3.0.10",
     "gatsby-plugin-styled-components": "^3.0.7",
+    "gsap": "^2.1.2",
     "parallax-js": "^3.1.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
