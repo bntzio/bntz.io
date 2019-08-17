@@ -1,43 +1,21 @@
 {
-  "name": "bntz",
-  "version": "0.1.0",
+  "name": "bntz-io",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
   "description": "My personal site",
   "author": "Enrique Benitez <hello@bntz.io>",
-  "private": true,
-  "license": "MIT",
   "main": "n/a",
   "homepage": "https://github.com/bntzio/bntz.io",
   "scripts": {
-    "start": "serve public/",
     "build": "gatsby build",
-    "now-build": "npm run build",
-    "now": "now && now alias",
-    "develop": "gatsby develop"
+    "develop": "gatsby develop",
+    "clean": "gatsby clean"
   },
   "dependencies": {
-    "body-scroll-lock": "^2.6.1",
-    "d3": "^5.9.2",
-    "gatsby": "^2.1.37",
-    "gatsby-plugin-react-helmet": "^3.0.10",
-    "gatsby-plugin-styled-components": "^3.0.7",
-    "parallax-js": "^3.1.0",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "react-faux-dom": "^4.4.0",
-    "react-helmet": "^5.2.0",
-    "serve": "7.0.0",
-    "styled-components": "^4.1.3",
-    "textures": "^1.2.0"
-  },
-  "devDependencies": {
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.15.2",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-config-standard-react": "^7.0.2",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-node": "^8.0.1",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-react": "^7.12.4",
-    "eslint-plugin-standard": "^4.0.0"
+    "@narative/gatsby-theme-novela": "0.1.0",
+    "gatsby": "^2.13.67",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
   }
 }

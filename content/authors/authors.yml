@@ -1,0 +1,5 @@
+- name: Enrique Benitez
+  bio: |
+    Full-Stack Developer and Maker
+  avatar: ./avatars/enrique-benitez.jpeg
+  featured: true
