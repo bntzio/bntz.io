@@ -13,7 +13,7 @@ index fbca4fb..d7962a9 100644
            avatar {
              small: childImageSharp {
 diff --git a/node_modules/@narative/gatsby-theme-novela/gatsby/node/createPages.js b/node_modules/@narative/gatsby-theme-novela/gatsby/node/createPages.js
-index 28317db..0a33959 100644
+index 28317db..feb58c6 100644
 --- a/node_modules/@narative/gatsby-theme-novela/gatsby/node/createPages.js
 +++ b/node_modules/@narative/gatsby-theme-novela/gatsby/node/createPages.js
 @@ -1,7 +1,8 @@
@@ -26,7 +26,14 @@ index 28317db..0a33959 100644
  
  const path = require("path");
  const createPaginatedPages = require("gatsby-paginate");
-@@ -49,7 +50,8 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
+@@ -43,13 +44,14 @@ const byDate = (a, b) => new Date(b.dateForSEO) - new Date(a.dateForSEO);
+ /////////////////////////////////////////////////////////
+ 
+ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
+-  const basePath = themeOptions.basePath || `/`;
++  const basePath = themeOptions.basePath || `/blog`;
+   const authorsPath = themeOptions.authorsPath || `/authors`;
+   const authorsPage = themeOptions.authorsPage;
    const pageLength = themeOptions.pageLength || 6;
  
    // Defaulting to look at the local MDX files as sources.

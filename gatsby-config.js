@@ -26,6 +26,7 @@ module.exports = {
   plugins: [
     {
       resolve: "@narative/gatsby-theme-novela",
+      basePath: "/blog",
     },
   ],
 };
