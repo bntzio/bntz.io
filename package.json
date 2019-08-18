@@ -10,11 +10,13 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "postinstall": "patch-package"
   },
   "dependencies": {
-    "@narative/gatsby-theme-novela": "0.1.0",
+    "@narative/gatsby-theme-novela": "^0.3.7",
     "gatsby": "^2.13.67",
+    "patch-package": "^6.1.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   }

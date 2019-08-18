@@ -1,0 +1,109 @@
+diff --git a/node_modules/@narative/gatsby-theme-novela/gatsby/data/data.query.js b/node_modules/@narative/gatsby-theme-novela/gatsby/data/data.query.js
+index fbca4fb..d7962a9 100644
+--- a/node_modules/@narative/gatsby-theme-novela/gatsby/data/data.query.js
++++ b/node_modules/@narative/gatsby-theme-novela/gatsby/data/data.query.js
+@@ -63,9 +63,6 @@ module.exports.local = {
+           id
+           name
+           featured
+-          social {
+-            url
+-          }
+           slug
+           avatar {
+             small: childImageSharp {
+diff --git a/node_modules/@narative/gatsby-theme-novela/gatsby/node/createPages.js b/node_modules/@narative/gatsby-theme-novela/gatsby/node/createPages.js
+index 28317db..0a33959 100644
+--- a/node_modules/@narative/gatsby-theme-novela/gatsby/node/createPages.js
++++ b/node_modules/@narative/gatsby-theme-novela/gatsby/node/createPages.js
+@@ -1,7 +1,8 @@
+ "use strict";
+ require("dotenv").config();
+ 
+-const log = (msg, section) => console.log(`\n\x1b[36m${msg} \x1b[4m${section}\x1b[0m\x1b[0m\n`);
++const log = (msg, section) =>
++  console.log(`\n\x1b[36m${msg} \x1b[4m${section}\x1b[0m\x1b[0m\n`);
+ 
+ const path = require("path");
+ const createPaginatedPages = require("gatsby-paginate");
+@@ -49,7 +50,8 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
+   const pageLength = themeOptions.pageLength || 6;
+ 
+   // Defaulting to look at the local MDX files as sources.
+-  const { local = true, contentful = false } = (themeOptions && themeOptions.sources) || {};
++  const { local = true, contentful = false } =
++    (themeOptions && themeOptions.sources) || {};
+ 
+   let authors;
+   let articles;
+@@ -69,9 +71,13 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
+       const localAuthors = await graphql(query.local.authors);
+       const localArticles = await graphql(query.local.articles);
+ 
+-      dataSources.local.authors = localAuthors.data.authors.edges.map(normalize.local.authors);
++      dataSources.local.authors = localAuthors.data.authors.edges.map(
++        normalize.local.authors
++      );
+ 
+-      dataSources.local.articles = localArticles.data.articles.edges.map(normalize.local.articles);
++      dataSources.local.articles = localArticles.data.articles.edges.map(
++        normalize.local.articles
++      );
+     } catch (error) {
+       console.error(error);
+     }
+@@ -84,11 +90,11 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
+       const contentfulArticles = await graphql(query.contentful.articles);
+ 
+       dataSources.contentful.authors = contentfulAuthors.data.authors.edges.map(
+-        normalize.contentful.authors,
++        normalize.contentful.authors
+       );
+ 
+       dataSources.contentful.articles = contentfulArticles.data.articles.edges.map(
+-        normalize.contentful.articles,
++        normalize.contentful.articles
+       );
+     } catch (error) {
+       console.error(error);
+@@ -111,7 +117,7 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
+       ...dataSources.contentful.authors,
+       ...dataSources.netlify.authors,
+     ],
+-    "name",
++    "name"
+   );
+ 
+   if (articles.length === 0 || authors.length === 0) {
+@@ -156,7 +162,9 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
+     let authorsThatWroteTheArticle;
+     try {
+       authorsThatWroteTheArticle = authors.filter(author => {
+-        const allAuthors = article.author.split(",").map(a => a.trim().toLowerCase());
++        const allAuthors = article.author
++          .split(",")
++          .map(a => a.trim().toLowerCase());
+ 
+         return allAuthors.some(a => a === author.name.toLowerCase());
+       });
+@@ -178,7 +186,8 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
+     // If it's the last item in the list, there will be no articles. So grab the first 2
+     if (next.length === 0) next = articles.slice(0, 2);
+     // If there's 1 item in the list, grab the first article
+-    if (next.length === 1 && articles.length !== 2) next = [...next, articles[0]];
++    if (next.length === 1 && articles.length !== 2)
++      next = [...next, articles[0]];
+     if (articles.length === 1) next = [];
+ 
+     createPage({
+@@ -205,7 +214,9 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
+ 
+     authors.forEach(author => {
+       const articlesTheAuthorHasWritten = articles
+-        .filter(article => article.author.toLowerCase().includes(author.name.toLowerCase()))
++        .filter(article =>
++          article.author.toLowerCase().includes(author.name.toLowerCase())
++        )
+         .filter(article => !article.secret);
+       const path = slugify(author.name, authorsPath);
+ 
