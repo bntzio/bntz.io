@@ -5,6 +5,8 @@ import Terminal from 'terminal-in-react'
 import NewWindow from 'react-new-window'
 /** custom imports */
 // @ts-ignore
+import { useDarkModeDispatch } from 'context/DarkMode'
+// @ts-ignore
 import twitter from 'assets/icons/twitter.svg'
 // @ts-ignore
 import facebook from 'assets/icons/facebook.svg'
@@ -17,6 +19,7 @@ import github from 'assets/icons/github.svg'
 
 const Home = () => {
   const [hideTerminal, setHideTerminal] = useState(false)
+  const dispatch: ({ type }: { type: 'toggle' | 'on' | 'off' }) => void = useDarkModeDispatch()
 
   const portal = (url: string) => <NewWindow url={url} />
 
@@ -40,7 +43,7 @@ const Home = () => {
             blog: () => navigate('/blog'),
             projects: () => navigate('/blog'),
             whoami: {
-              method: (_args: any, print: any) => {
+              method: (_args: any, print: (msg: string) => string) => {
                 print(`Hi! My name is Enrique. I'm a full-stack developer and maker.`)
                 print(`I love to make stuff on the Internet, since I was a kid I got in love with computers.`)
                 print(`Since then I've been learning new stuff to improve my craft.`)
@@ -58,6 +61,22 @@ const Home = () => {
                 )
               }
             },
+            darkmode: (args: 'toggle' | 'on' | 'off', print: (msg: string) => string) => {
+              if (!args[1]) {
+                return dispatch({ type: 'toggle' })
+              }
+
+              switch (args[1]) {
+                case 'toggle':
+                  return dispatch({ type: 'toggle' })
+                case 'on':
+                  return dispatch({ type: 'on' })
+                case 'off':
+                  return dispatch({ type: 'off' })
+                default:
+                  return print(`Please provide a valid argument.`)
+              }
+            },
             twitter: () => portal('https://twitter.com/bntzio'),
             facebook: () => portal('https://facebook.com/bntzio'),
             instagram: () => portal('https://instagram.com/bntzio'),
@@ -71,6 +90,7 @@ const Home = () => {
             blog: 'go to my blog ✍️',
             projects: 'learn about my projects 👨‍💻',
             whoami: 'read more about me 😄',
+            darkmode: 'toggle dark mode 🔲',
             twitter: 'open my twitter 🐦',
             facebook: 'open my facebook 📘',
             instagram: 'open my instagram 🖼️',

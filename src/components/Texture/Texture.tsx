@@ -3,30 +3,22 @@ import React from 'react'
 import textures from 'textures'
 import styled from '@emotion/styled'
 import ReactFauxDOM from 'react-faux-dom'
-
-const TextureWrapper = styled.div`
-  svg {
-    position: absolute;
-    top: -50px;
-    bottom: 0px;
-    right: -200px;
-    left: -200px;
-    height: 100vh;
-    width: 180vw;
-    z-index: -1;
-  }
-`
+/** custom imports */
+// @ts-ignore
+import { useDarkModeState } from 'context/DarkMode'
 
 const Texture = () => {
-  var node = ReactFauxDOM.createElement('svg')
-  var d3svg = d3.select(node)
+  const darkMode: { on: boolean } = useDarkModeState()
+
+  const node = ReactFauxDOM.createElement('svg')
+  const d3svg = d3.select(node)
 
   const texture = textures
     .circles()
     .size(20)
     .lighter()
     .lighter()
-    .fill('rgba(0,0,0,0.6)')
+    .fill(darkMode.on ? 'rgba(255,255,255,0.6)' : 'rgba(0,0,0,0.6)')
 
   d3svg.call(texture)
 
@@ -40,5 +32,18 @@ const Texture = () => {
 
   return <TextureWrapper>{node.toReact()}</TextureWrapper>
 }
+
+const TextureWrapper = styled.div`
+  svg {
+    position: absolute;
+    top: -50px;
+    bottom: 0px;
+    right: -200px;
+    left: -200px;
+    height: 100vh;
+    width: 180vw;
+    z-index: -1;
+  }
+`
 
 export default Texture

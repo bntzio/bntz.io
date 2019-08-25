@@ -18,6 +18,8 @@ import Header from 'components/Header'
 import Wave from 'components/Wave'
 // @ts-ignore
 import Texture from 'components/Texture'
+// @ts-ignore
+import { DarkModeProvider } from 'context/DarkMode'
 
 export default () => {
   useEffect(() => {
@@ -32,7 +34,7 @@ export default () => {
   }, [])
 
   return (
-    <React.Fragment>
+    <DarkModeProvider>
       <Head />
       <Global styles={GlobalStyles} />
       <Main>
@@ -51,7 +53,7 @@ export default () => {
           <Wave />
         </Footer>
       </Main>
-    </React.Fragment>
+    </DarkModeProvider>
   )
 }
 
