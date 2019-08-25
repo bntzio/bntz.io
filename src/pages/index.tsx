@@ -32,31 +32,32 @@ export default () => {
   }, [])
 
   return (
-    <>
+    <React.Fragment>
       <Head />
       <Global styles={GlobalStyles} />
-      <main>
+      <Main>
         <Scene id="scene">
           <Content data-depth="0.15">
             <Texture />
-            <Layout>
-              <Home />
-            </Layout>
           </Content>
         </Scene>
         <Top>
           <Header />
         </Top>
+        <Layout>
+          <Home />
+        </Layout>
         <Footer>
           <Wave />
         </Footer>
-      </main>
-    </>
+      </Main>
+    </React.Fragment>
   )
 }
 
 const Scene = styled.section``
 const Content = styled.div``
+const Main = styled.main``
 
 const Top = styled.div`
   position: absolute;

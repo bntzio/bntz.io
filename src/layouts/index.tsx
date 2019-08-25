@@ -1,15 +1,9 @@
 import React from 'react'
 import styled from '@emotion/styled'
-/** custom imports */
-// @ts-ignore
-import Logo from 'components/Logo'
 
 export default ({ children }: any) => (
   <Layout>
-    <Wrapper>
-      <Logo />
-      {children}
-    </Wrapper>
+    <Wrapper>{children}</Wrapper>
   </Layout>
 )
 
