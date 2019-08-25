@@ -39,7 +39,32 @@ const Home = () => {
           commands={{
             blog: () => navigate('/blog'),
             projects: () => navigate('/blog'),
-            about: () => navigate('/blog'),
+            whoami: {
+              method: (_args: any, print: any) => {
+                print(`Hi! My name is Enrique. I'm a full-stack developer and maker.`)
+                print(`I love to make stuff on the Internet, since I was a kid I got in love with computers.`)
+                print(`Since then I've been learning new stuff to improve my craft.`)
+                print(`I consider myself as a 60% frontend and 40% backend developer.`)
+                print(
+                  // eslint-disable-next-line max-len
+                  `From the frontend side, I always aim for pixel perfect designs and beautiful UX. From the backend, I structure everything in a scalable manner.`
+                )
+                print(
+                  `Some technologies I work with are React, NodeJS, TypeScript, Python, Ruby on Rails, among others.`
+                )
+                print(
+                  // eslint-disable-next-line max-len
+                  `On my free time I read books, launch side projects, learn new technologies, write on my blog and contribute to open source.`
+                )
+              },
+              options: [
+                {
+                  name: 'color',
+                  description: 'The color the output should be',
+                  defaultValue: 'white'
+                }
+              ]
+            },
             twitter: () => portal('https://twitter.com/bntzio'),
             facebook: () => portal('https://facebook.com/bntzio'),
             instagram: () => portal('https://instagram.com/bntzio'),
@@ -52,7 +77,7 @@ const Home = () => {
             help: 'list all the commands 💻',
             blog: 'go to my blog ✍️',
             projects: 'learn about my projects 👨‍💻',
-            about: 'read more about me 😄',
+            whoami: 'read more about me 😄',
             twitter: 'open my twitter 🐦',
             facebook: 'open my facebook 📘',
             instagram: 'open my instagram 🖼️',
