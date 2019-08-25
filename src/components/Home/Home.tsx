@@ -56,14 +56,7 @@ const Home = () => {
                   // eslint-disable-next-line max-len
                   `On my free time I read books, launch side projects, learn new technologies, write on my blog and contribute to open source.`
                 )
-              },
-              options: [
-                {
-                  name: 'color',
-                  description: 'The color the output should be',
-                  defaultValue: 'white'
-                }
-              ]
+              }
             },
             twitter: () => portal('https://twitter.com/bntzio'),
             facebook: () => portal('https://facebook.com/bntzio'),
