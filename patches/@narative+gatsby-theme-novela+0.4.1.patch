@@ -1,0 +1,14 @@
+diff --git a/node_modules/@narative/gatsby-theme-novela/gatsby/data/data.query.js b/node_modules/@narative/gatsby-theme-novela/gatsby/data/data.query.js
+index 0e19666..dfa8f01 100644
+--- a/node_modules/@narative/gatsby-theme-novela/gatsby/data/data.query.js
++++ b/node_modules/@narative/gatsby-theme-novela/gatsby/data/data.query.js
+@@ -64,9 +64,6 @@ module.exports.local = {
+           id
+           name
+           featured
+-          social {
+-            url
+-          }
+           slug
+           avatar {
+             small: childImageSharp {
