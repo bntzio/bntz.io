@@ -26,6 +26,7 @@
     "react-faux-dom": "^4.5.0",
     "react-helmet": "^5.2.1",
     "react-new-window": "^0.1.2",
+    "react-spring": "^8.0.27",
     "terminal-in-react": "^4.3.1",
     "textures": "^1.2.2"
   },

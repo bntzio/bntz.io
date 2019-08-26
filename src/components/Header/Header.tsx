@@ -32,6 +32,10 @@ const Description = styled.h1<{ color: '#fff' | '#000' }>`
   font-weight: 500;
   font-size: 1.3rem;
   color: ${props => props.color};
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all             */
+  -ms-user-select: none; /* IE 10+                  */
+  user-select: none; /* Likely future           */
 `
 
 export default Header

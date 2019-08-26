@@ -20,6 +20,8 @@ import Wave from 'components/Wave'
 import Texture from 'components/Texture'
 // @ts-ignore
 import { DarkModeProvider } from 'context/DarkMode'
+// @ts-ignore
+import { ProjectsModeProvider } from 'context/ProjectsMode'
 
 export default () => {
   useEffect(() => {
@@ -35,24 +37,26 @@ export default () => {
 
   return (
     <DarkModeProvider>
-      <Head />
-      <Global styles={GlobalStyles} />
-      <Main>
-        <Scene id="scene">
-          <Content data-depth="0.15">
-            <Texture />
-          </Content>
-        </Scene>
-        <Top>
-          <Header />
-        </Top>
-        <Layout>
-          <Home />
-        </Layout>
-        <Footer>
-          <Wave />
-        </Footer>
-      </Main>
+      <ProjectsModeProvider>
+        <Head />
+        <Global styles={GlobalStyles} />
+        <Main>
+          <Scene id="scene">
+            <Content data-depth="0.15">
+              <Texture />
+            </Content>
+          </Scene>
+          <Top>
+            <Header />
+          </Top>
+          <Layout>
+            <Home />
+          </Layout>
+          <Footer>
+            <Wave />
+          </Footer>
+        </Main>
+      </ProjectsModeProvider>
     </DarkModeProvider>
   )
 }

@@ -36,7 +36,7 @@ const Texture = () => {
 const TextureWrapper = styled.div`
   svg {
     position: absolute;
-    top: -50px;
+    top: 0;
     bottom: 0px;
     right: -200px;
     left: -200px;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from '@emotion/styled'
 import { navigate, Link } from 'gatsby'
 import Terminal from 'terminal-in-react'
@@ -6,6 +6,12 @@ import NewWindow from 'react-new-window'
 /** custom imports */
 // @ts-ignore
 import { useDarkModeDispatch } from 'context/DarkMode'
+// @ts-ignore
+import { useProjectsModeDispatch, useProjectsModeState } from 'context/ProjectsMode'
+// @ts-ignore
+import Card from 'components/Card'
+// @ts-ignore
+import { ControlsLeft, ControlsRight } from 'components/Controls'
 // @ts-ignore
 import twitter from 'assets/icons/twitter.svg'
 // @ts-ignore
@@ -17,21 +23,72 @@ import codepen from 'assets/icons/codepen.svg'
 // @ts-ignore
 import github from 'assets/icons/github.svg'
 
+const CARDS = [
+  <Card
+    url={`https://drscdn.500px.org/photo/435236/q%3D80_m%3D1500/v2?webp=true&sig=67031bdff6f582f3e027311e2074be452203ab637c0bd21d89128844becf8e40`}
+  />,
+  <Card
+    url={`https://images.unsplash.com/photo-1566762492169-816dfd8be4b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80`}
+  />,
+  <Card
+    url={`https://images.unsplash.com/photo-1562185022-c0a7889d7fbb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80`}
+  />,
+  <Card
+    url={`https://images.unsplash.com/photo-1566728618788-11b888adb6b6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1012&q=80`}
+  />
+]
+
 const Home = () => {
   const [hideTerminal, setHideTerminal] = useState(false)
-  const dispatch: ({ type }: { type: 'toggle' | 'on' | 'off' }) => void = useDarkModeDispatch()
+  const darkModeDispatch: ({ type }: { type: 'toggle' | 'on' | 'off' }) => void = useDarkModeDispatch()
+  const projectsMode: { on: boolean } = useProjectsModeState()
+  const projectsModeDispatch: ({ type }: { type: 'on' | 'off' }) => void = useProjectsModeDispatch()
+  const [currentCard, setCurrentCard] = useState(0)
+  const [selectedCard, setSelectedCard] = useState(null)
+
+  useEffect(() => {
+    if (projectsMode.on) {
+      setHideTerminal(true)
+    } else {
+      setHideTerminal(false)
+    }
+  }, [projectsMode])
+
+  useEffect(() => {
+    setSelectedCard(CARDS[currentCard] as any)
+  }, [currentCard])
 
   const portal = (url: string) => <NewWindow url={url} />
 
   return (
     <Content>
-      {hideTerminal && (
-        <Links>
-          <Link to="/blog">Blog</Link>
-          <Link to="/">Projects</Link>
-          <Link to="/">About</Link>
-        </Links>
+      {projectsMode.on && (
+        <BackToTerminalBtn
+          onClick={() => {
+            projectsModeDispatch({ type: 'off' })
+          }}
+        >
+          Back to Terminal
+        </BackToTerminalBtn>
       )}
+      {projectsMode.on && (
+        <ProjectContainer>
+          <div
+            onClick={() => (currentCard !== 0 ? setCurrentCard(currentCard - 1) : null)}
+            style={{ visibility: currentCard === 0 ? 'hidden' : 'visible' }}
+          >
+            <ControlsLeft />
+          </div>
+          {selectedCard}
+          <div
+            onClick={() => (currentCard !== CARDS.length - 1 ? setCurrentCard(currentCard + 1) : null)}
+            style={{ visibility: currentCard === CARDS.length - 1 ? 'hidden' : 'visible' }}
+          >
+            <ControlsRight />
+          </div>
+        </ProjectContainer>
+      )}
+
       {!hideTerminal && (
         // @ts-ignore
         <Terminal
@@ -41,7 +98,7 @@ const Home = () => {
           style={{ fontWeight: 'bold', fontSize: '1em', height: 375 }}
           commands={{
             blog: () => navigate('/blog'),
-            projects: () => navigate('/blog'),
+            projects: () => projectsModeDispatch({ type: 'on' }),
             whoami: {
               method: (_args: any, print: (msg: string) => string) => {
                 print(`Hi! My name is Enrique. I'm a full-stack developer and maker.`)
@@ -63,16 +120,15 @@ const Home = () => {
             },
             darkmode: (args: 'toggle' | 'on' | 'off', print: (msg: string) => string) => {
               if (!args[1]) {
-                return dispatch({ type: 'toggle' })
+                return darkModeDispatch({ type: 'toggle' })
               }
-
               switch (args[1]) {
                 case 'toggle':
-                  return dispatch({ type: 'toggle' })
+                  return darkModeDispatch({ type: 'toggle' })
                 case 'on':
-                  return dispatch({ type: 'on' })
+                  return darkModeDispatch({ type: 'on' })
                 case 'off':
-                  return dispatch({ type: 'off' })
+                  return darkModeDispatch({ type: 'off' })
                 default:
                   return print(`Please provide a valid argument.`)
               }
@@ -102,33 +158,42 @@ const Home = () => {
         />
       )}
 
-      <Social>
-        <a href="https://twitter.com/bntzio" target="_blank">
-          <li>
-            <img alt="Twitter" src={twitter} />
-          </li>
-        </a>
-        <a href="https://facebook.com/bntzio" target="_blank">
-          <li>
-            <img src={facebook} alt="Twitter" />
-          </li>
-        </a>
-        <a href="https://instagram.com/bntzio" target="_blank">
-          <li>
-            <img alt="Twitter" src={instagram} />
-          </li>
-        </a>
-        <a href="https://codepen.io/bntzio" target="_blank">
-          <li>
-            <img src={codepen} alt="Twitter" />
-          </li>
-        </a>
-        <a href="https://github.com/bntzio" target="_blank">
-          <li>
-            <img src={github} alt="Twitter" />
-          </li>
-        </a>
-      </Social>
+      {hideTerminal && !projectsMode.on && (
+        <React.Fragment>
+          <Links>
+            <Link to="/blog">Blog</Link>
+            <Link to="/">Projects</Link>
+            <Link to="/">About</Link>
+          </Links>
+          <Social>
+            <a href="https://twitter.com/bntzio" target="_blank">
+              <li>
+                <img alt="Twitter" src={twitter} />
+              </li>
+            </a>
+            <a href="https://facebook.com/bntzio" target="_blank">
+              <li>
+                <img src={facebook} alt="Twitter" />
+              </li>
+            </a>
+            <a href="https://instagram.com/bntzio" target="_blank">
+              <li>
+                <img alt="Twitter" src={instagram} />
+              </li>
+            </a>
+            <a href="https://codepen.io/bntzio" target="_blank">
+              <li>
+                <img src={codepen} alt="Twitter" />
+              </li>
+            </a>
+            <a href="https://github.com/bntzio" target="_blank">
+              <li>
+                <img src={github} alt="Twitter" />
+              </li>
+            </a>
+          </Social>
+        </React.Fragment>
+      )}
     </Content>
   )
 }
@@ -191,6 +256,44 @@ const Social = styled.ul`
         width: auto;
         height: auto;
       }
+    }
+  }
+`
+
+const BackToTerminalBtn = styled.button`
+  outline: none;
+  background: transparent;
+  border: 1.4px solid #dedede;
+  color: #cecece;
+  font-size: 1.4rem;
+  font-weight: lighter;
+  border-radius: 1.4rem;
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+  padding: 0.5rem 2rem;
+  margin-top: -2.5rem;
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all             */
+  -ms-user-select: none; /* IE 10+                  */
+  user-select: none; /* Likely future           */
+
+  &:hover {
+    cursor: pointer;
+    border-color: #cecece;
+  }
+`
+
+const ProjectContainer = styled.div`
+  display: flex;
+  align-items: center;
+
+  svg {
+    margin: 0 8rem;
+    color: #dedede;
+
+    &:hover {
+      color: #cecece;
+      cursor: pointer;
     }
   }
 `
